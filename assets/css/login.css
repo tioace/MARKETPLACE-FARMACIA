@@ -1,52 +1,113 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url(menu.css);
+
+
+/*
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-}
-
-body{
-    /*display: flex;
-    justify-content: center;
-    align-items: center;*/
-    min-height: 20%;
-    background: rgb(118, 168, 224);
-}
-
-ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: #333333;
-  display: flex;
-}
-
-ul li a {
-  display: block;
-  color: white;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-ul li a:hover {
-  background-color: #111111;
-}
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}*/
 
 
 .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 850px;
-    height: 550px;
-    background: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 2);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.form-box{
+.form{
+  max-width: 480px;
+  width: 100%;
+  padding: 30px;
+  border-style: outset;
+  border-color: black;
+  border-radius: 6px;
+}
+
+h2{
+  font-size: 28px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
 
 }
+
+form{
+  margin-top: 30px;
+}
+
+form .field{
+  position: relative;
+  height: 45px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.field input{
+  height: 100%;
+  width: 100%;
+  border: 1px solid #CACACA;
+  padding: 0 15px;
+}
+
+.eye-icon{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #8b8b8b;
+}
+
+.form-link{
+  text-align: center;
+  margin-top: 10px; 
+}
+
+.form-link a, .form-link span{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.form a{
+  text-decoration: none;
+  color: #556DBA;
+}
+
+.form a:hover{
+  text-decoration: underline;
+}
+
+.entrar-field input:hover{
+  background: #556DBA;
+  color: #fff;
+}
+
+.form-link .criar-conta{
+  color: #556DBA;
+}
+
+.line{
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin: 36px 0;
+  background-color: #d4d4d4;
+}
+
+.line::before{
+  content: 'Ou';
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #232836;
+  padding: 0 15px;
+} 
+
+  
