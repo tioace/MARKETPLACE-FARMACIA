@@ -1,0 +1,1455 @@
+.farmcia-dashboard {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+    min-width: 1440px;
+    min-height: 1726px;
+    position: relative;
+}
+
+.farmcia-dashboard .rectangle {
+    position: absolute;
+    top: 1239px;
+    left: 52px;
+    width: 1341px;
+    height: 436px;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
+.farmcia-dashboard .text-wrapper {
+    position: absolute;
+    top: 1274px;
+    left: 117px;
+    width: 328px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #686868;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.farmcia-dashboard .div {
+    position: absolute;
+    top: 322px;
+    left: 52px;
+    width: 1341px;
+    height: 875px;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
+.farmcia-dashboard .text-wrapper-2 {
+    position: absolute;
+    top: 387px;
+    left: 191px;
+    width: 52px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #556cba;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .text-wrapper-3 {
+    position: absolute;
+    top: 389px;
+    left: 861px;
+    width: 52px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #baa255;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .text-wrapper-4 {
+    position: absolute;
+    top: 389px;
+    left: 1185px;
+    width: 70px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #3f8829;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .text-wrapper-5 {
+    position: absolute;
+    top: 389px;
+    left: 491px;
+    width: 154px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #556cba;
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .menu {
+    display: flex;
+    width: 1341px;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 80px;
+    position: absolute;
+    top: 202px;
+    left: 52px;
+    background-color: #f2f4f8;
+}
+
+.farmcia-dashboard .menu-item {
+    display: inline-flex;
+    padding: 12px 0px;
+    align-self: stretch;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.farmcia-dashboard .icon-jam-icons {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.farmcia-dashboard .text-wrapper-6 {
+    position: absolute;
+    top: 226px;
+    left: 714px;
+    font-family: var(--other-menu-m-font-family);
+    font-weight: var(--other-menu-m-font-weight);
+    color: var(--coolgray-90);
+    font-size: var(--other-menu-m-font-size);
+    letter-spacing: var(--other-menu-m-letter-spacing);
+    line-height: var(--other-menu-m-line-height);
+    white-space: nowrap;
+    font-style: var(--other-menu-m-font-style);
+}
+
+.farmcia-dashboard .text-wrapper-7 {
+    position: absolute;
+    top: 224px;
+    left: 436px;
+    font-family: var(--other-menu-m-font-family);
+    font-weight: var(--other-menu-m-font-weight);
+    color: var(--coolgray-90);
+    font-size: var(--other-menu-m-font-size);
+    letter-spacing: var(--other-menu-m-letter-spacing);
+    line-height: var(--other-menu-m-line-height);
+    white-space: nowrap;
+    font-style: var(--other-menu-m-font-style);
+}
+
+.farmcia-dashboard .buttons-group {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    position: absolute;
+    top: 210px;
+    left: 1198px;
+}
+
+.farmcia-dashboard .button {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    margin-top: -4.00px;
+    margin-bottom: -4.00px;
+}
+
+.farmcia-dashboard .div-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .button-text {
+    font-family: var(--button-m-font-family);
+    font-weight: var(--button-m-font-weight);
+    color: var(--primary-90);
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-size: var(--button-m-font-size);
+    letter-spacing: var(--button-m-letter-spacing);
+    line-height: var(--button-m-line-height);
+    white-space: nowrap;
+    font-style: var(--button-m-font-style);
+}
+
+.farmcia-dashboard .text-container-wrapper {
+    all: unset;
+    box-sizing: border-box;
+    display: inline-flex;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 216px;
+    left: 284px;
+    background-color: #556cba;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.farmcia-dashboard .text-container {
+    align-items: center;
+    gap: 10px;
+    padding: 0px 16px;
+    margin-top: -6.00px;
+    margin-bottom: -6.00px;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .button-text-2 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: var(--button-m-font-family);
+    font-weight: var(--button-m-font-weight);
+    color: var(--defaultwhite);
+    font-size: var(--button-m-font-size);
+    letter-spacing: var(--button-m-letter-spacing);
+    line-height: var(--button-m-line-height);
+    white-space: nowrap;
+    font-style: var(--button-m-font-style);
+}
+
+.farmcia-dashboard .caption {
+    position: absolute;
+    top: 222px;
+    left: -460px;
+    width: 1280px;
+    font-family: var(--other-caption-font-family);
+    font-weight: var(--other-caption-font-weight);
+    color: var(--primary-90);
+    font-size: var(--other-caption-font-size);
+    text-align: center;
+    letter-spacing: var(--other-caption-letter-spacing);
+    line-height: var(--other-caption-line-height);
+    font-style: var(--other-caption-font-style);
+}
+
+.farmcia-dashboard .rectangle-2 {
+    position: absolute;
+    top: 331px;
+    left: 73px;
+    width: 299px;
+    height: 165px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .rectangle-3 {
+    position: absolute;
+    top: 331px;
+    left: 405px;
+    width: 299px;
+    height: 165px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .rectangle-4 {
+    position: absolute;
+    top: 331px;
+    left: 728px;
+    width: 299px;
+    height: 165px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .rectangle-5 {
+    position: absolute;
+    top: 331px;
+    left: 1061px;
+    width: 299px;
+    height: 165px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .group {
+    position: absolute;
+    top: 532px;
+    left: 73px;
+    width: 814px;
+    height: 575px;
+}
+
+.farmcia-dashboard .rectangle-6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 792px;
+    height: 575px;
+}
+
+.farmcia-dashboard .rectangle-7 {
+    position: absolute;
+    top: 228px;
+    left: 12px;
+    width: 761px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .rectangle-8 {
+    position: absolute;
+    top: 308px;
+    left: 12px;
+    width: 761px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .rectangle-9 {
+    position: absolute;
+    top: 383px;
+    left: 12px;
+    width: 761px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .rectangle-10 {
+    position: absolute;
+    top: 468px;
+    left: 12px;
+    width: 761px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .text-wrapper-8 {
+    position: absolute;
+    top: 54px;
+    left: 18px;
+    width: 254px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #686868;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.farmcia-dashboard .rectangle-11 {
+    position: absolute;
+    top: 153px;
+    left: 12px;
+    width: 761px;
+    height: 60px;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #686868;
+}
+
+.farmcia-dashboard .text-wrapper-9 {
+    top: 176px;
+    left: 548px;
+    position: absolute;
+    width: 83px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #273870;
+    font-size: 15px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 15px;
+}
+
+.farmcia-dashboard .text-wrapper-10 {
+    top: 250px;
+    left: 548px;
+    position: absolute;
+    width: 83px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #273870;
+    font-size: 15px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 15px;
+}
+
+.farmcia-dashboard .text-wrapper-11 {
+    top: 405px;
+    left: 547px;
+    position: absolute;
+    width: 83px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #273870;
+    font-size: 15px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 15px;
+}
+
+.farmcia-dashboard .text-wrapper-12 {
+    top: 491px;
+    left: 548px;
+    position: absolute;
+    width: 83px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #273870;
+    font-size: 15px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 15px;
+}
+
+.farmcia-dashboard .text-wrapper-13 {
+    top: 332px;
+    left: 547px;
+    position: absolute;
+    width: 83px;
+    font-family: "Roboto-ExtraBold", Helvetica;
+    font-weight: 800;
+    color: #273870;
+    font-size: 15px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: 15px;
+}
+
+.farmcia-dashboard .maria-silva {
+    position: absolute;
+    top: 176px;
+    left: 28px;
+    width: 199px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 17px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .span {
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 17px;
+}
+
+.farmcia-dashboard .text-wrapper-14 {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.farmcia-dashboard .ped-maria-silva {
+    top: 250px;
+    position: absolute;
+    left: 28px;
+    width: 199px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 17px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .p {
+    top: 328px;
+    position: absolute;
+    left: 28px;
+    width: 199px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 17px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .maria-silva-2 {
+    top: 403px;
+    position: absolute;
+    left: 28px;
+    width: 199px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 17px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .maria-silva-3 {
+    top: 488px;
+    position: absolute;
+    left: 28px;
+    width: 199px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 17px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .group-2 {
+    position: absolute;
+    top: 532px;
+    left: 876px;
+    width: 486px;
+    height: 375px;
+}
+
+.farmcia-dashboard .rectangle-12 {
+    height: 375px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 484px;
+}
+
+.farmcia-dashboard .text-wrapper-15 {
+    position: absolute;
+    top: 34px;
+    left: 21px;
+    width: 232px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #686868;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 25px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .div-wrapper {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 444px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 85px;
+    left: 21px;
+    background-color: #556cba;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.farmcia-dashboard .button-text-wrapper {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.farmcia-dashboard .button-text-3 {
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: var(--defaultwhite);
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-size: 16px;
+    letter-spacing: 0.50px;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .button-2 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 444px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 157px;
+    left: 20px;
+    background-color: #c7c7c7;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .button-text-4 {
+    font-family: "Roboto-Regular", Helvetica;
+    font-weight: 400;
+    color: #21272a;
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-size: 16px;
+    letter-spacing: 0.50px;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .button-3 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 444px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 228px;
+    left: 21px;
+    background-color: #c7c7c7;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .button-4 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 444px;
+    height: 52px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 299px;
+    left: 21px;
+    background-color: #7bc4aa;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .group-3 {
+    position: absolute;
+    top: 929px;
+    left: 876px;
+    width: 486px;
+    height: 224px;
+}
+
+.farmcia-dashboard .rectangle-13 {
+    height: 224px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 484px;
+}
+
+.farmcia-dashboard .text-wrapper-16 {
+    position: absolute;
+    top: 21px;
+    left: 21px;
+    width: 232px;
+    font-family: "Roboto-Medium", Helvetica;
+    font-weight: 500;
+    color: #686868;
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 25px;
+}
+
+.farmcia-dashboard .stats-card {
+    display: flex;
+    flex-direction: column;
+    width: 1206px;
+    height: 323px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0px;
+    position: absolute;
+    top: 1327px;
+    left: 117px;
+    background-color: var(--defaultwhite);
+    border: 1px solid;
+    border-color: var(--coolgray-20);
+}
+
+.farmcia-dashboard .graph-part-graph {
+    position: relative;
+    flex: 1;
+    align-self: stretch;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.farmcia-dashboard .fill {
+    position: absolute;
+    width: 100.00%;
+    height: 96.04%;
+    top: 3.96%;
+    left: 0;
+}
+
+.farmcia-dashboard .line {
+    position: absolute;
+    width: 100.00%;
+    height: 96.04%;
+    top: 3.52%;
+    left: 0;
+}
+
+.farmcia-dashboard .fill-2 {
+    position: absolute;
+    width: 100%;
+    height: 90.02%;
+    top: 10.50%;
+    left: 0;
+}
+
+.farmcia-dashboard .line-2 {
+    position: absolute;
+    width: 100%;
+    height: 79.60%;
+    top: 10.04%;
+    left: 0;
+}
+
+.farmcia-dashboard .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.farmcia-dashboard .title-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .title {
+    position: relative;
+    flex: 1;
+    margin-top: -1.00px;
+    font-family: var(--heading-4-font-family);
+    font-weight: var(--heading-4-font-weight);
+    color: var(--coolgray-90);
+    font-size: var(--heading-4-font-size);
+    text-align: center;
+    letter-spacing: var(--heading-4-letter-spacing);
+    line-height: var(--heading-4-line-height);
+    font-style: var(--heading-4-font-style);
+}
+
+.farmcia-dashboard .description-bottom {
+    position: relative;
+    align-self: stretch;
+    font-family: var(--body-m-font-family);
+    font-weight: var(--body-m-font-weight);
+    color: var(--coolgray-60);
+    font-size: var(--body-m-font-size);
+    text-align: center;
+    letter-spacing: var(--body-m-letter-spacing);
+    line-height: var(--body-m-line-height);
+    font-style: var(--body-m-font-style);
+}
+
+.farmcia-dashboard .ellipse {
+    position: absolute;
+    top: 224px;
+    left: 413px;
+    width: 15px;
+    height: 15px;
+    background-color: #3f8829;
+    border-radius: 7.5px;
+}
+
+.farmcia-dashboard .button-5 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 702px;
+    left: 717px;
+    background-color: #556cba;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.farmcia-dashboard .text-container-2 {
+    display: inline-flex;
+    flex: 0 0 auto;
+    margin-top: -9.50px;
+    margin-bottom: -9.50px;
+    margin-left: -6.00px;
+    margin-right: -6.00px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.farmcia-dashboard .button-text-5 {
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: var(--defaultwhite);
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-size: 16px;
+    letter-spacing: 0.50px;
+    line-height: 16px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .button-6 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 775px;
+    left: 717px;
+    background-color: #556cba;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.farmcia-dashboard .button-7 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 855px;
+    left: 717px;
+    background-color: #556cba;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.farmcia-dashboard .button-8 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 702px;
+    left: 270px;
+    background-color: #baa255;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .text-container-3 {
+    display: inline-flex;
+    flex: 0 0 auto;
+    margin-top: -9.50px;
+    margin-bottom: -9.50px;
+    margin-left: -3.50px;
+    margin-right: -3.50px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.farmcia-dashboard .button-9 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 775px;
+    left: 270px;
+    background-color: #baa255;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .button-10 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 855px;
+    left: 270px;
+    background-color: #baa255;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .button-11 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 930px;
+    left: 270px;
+    background-color: #baa255;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .button-12 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 1015px;
+    left: 270px;
+    background-color: #baa255;
+    border-radius: 10px;
+}
+
+.farmcia-dashboard .button-13 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 930px;
+    left: 720px;
+    background-color: #556cba;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.farmcia-dashboard .button-14 {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 119px;
+    height: 29px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    position: absolute;
+    top: 1015px;
+    left: 720px;
+    background-color: #556cba;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+.farmcia-dashboard .produto-unid {
+    position: absolute;
+    top: 1028px;
+    left: 901px;
+    width: 408px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: transparent;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+
+.farmcia-dashboard .text-wrapper-17 {
+    color: #000000;
+}
+
+.farmcia-dashboard .text-wrapper-18 {
+    color: #cf2626;
+}
+
+.farmcia-dashboard .text-wrapper-19 {
+    top: 430px;
+    left: 169px;
+    position: absolute;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .text-wrapper-20 {
+    position: absolute;
+    top: 433px;
+    left: 485px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .text-wrapper-21 {
+    top: 433px;
+    left: 802px;
+    position: absolute;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .text-wrapper-22 {
+    position: absolute;
+    top: 433px;
+    left: 1123px;
+    font-family: "Roboto-Light", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.farmcia-dashboard .rascunho {
+    display: flex;
+    flex-direction: column;
+    width: 1440px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    background-color: var(--defaultwhite);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: var(--coolgray-20);
+}
+
+.farmcia-dashboard .center {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 80px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .logo {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 4px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: #ffffff;
+}
+
+.farmcia-dashboard .webby-frames-wrapper {
+    flex-direction: column;
+    align-items: flex-end;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .webby-frames {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: var(--heading-4-font-family);
+    font-weight: var(--heading-4-font-weight);
+    color: var(--coolgray-60);
+    font-size: var(--heading-4-font-size);
+    letter-spacing: var(--heading-4-letter-spacing);
+    line-height: var(--heading-4-line-height);
+    white-space: nowrap;
+    font-style: var(--heading-4-font-style);
+}
+
+.farmcia-dashboard .rectangle-14 {
+    position: relative;
+    width: 105px;
+    height: 39px;
+    margin-top: -2638.00px;
+    margin-left: -4634.00px;
+}
+
+.farmcia-dashboard .frame {
+    background-image: url(./img/rectangle-5.svg);
+    position: relative;
+    width: 110px;
+    height: 32px;
+    background-size: 100% 100%;
+}
+
+.farmcia-dashboard .text-container-4 {
+    display: flex;
+    width: 57px;
+    top: 8px;
+    left: 27px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.farmcia-dashboard .text-wrapper-23 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    margin-left: -16.00px;
+    margin-right: -16.00px;
+    font-family: var(--button-m-font-family);
+    font-weight: var(--button-m-font-weight);
+    color: #797979;
+    font-size: var(--button-m-font-size);
+    letter-spacing: var(--button-m-letter-spacing);
+    line-height: var(--button-m-line-height);
+    white-space: nowrap;
+    font-style: var(--button-m-font-style);
+}
+
+.farmcia-dashboard .frame-2 {
+    background-image: url(./img/rectangle-6.svg);
+    position: relative;
+    width: 110px;
+    height: 32px;
+    background-size: 100% 100%;
+}
+
+.farmcia-dashboard .text-container-5 {
+    display: flex;
+    width: 100px;
+    top: 8px;
+    left: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.farmcia-dashboard .text-wrapper-24 {
+    position: relative;
+    width: 92px;
+    margin-top: -1.00px;
+    margin-left: -12.00px;
+    margin-right: -12.00px;
+    font-family: var(--button-m-font-family);
+    font-weight: var(--button-m-font-weight);
+    color: #797979;
+    font-size: var(--button-m-font-size);
+    letter-spacing: var(--button-m-letter-spacing);
+    line-height: var(--button-m-line-height);
+    font-style: var(--button-m-font-style);
+}
+
+.farmcia-dashboard .frame-3 {
+    background-image: url(./img/rectangle-7.svg);
+    position: relative;
+    width: 110px;
+    height: 32px;
+    background-size: 100% 100%;
+}
+
+.farmcia-dashboard .text-container-6 {
+    display: flex;
+    width: 90px;
+    top: 8px;
+    left: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 16px;
+    position: relative;
+}
+
+.farmcia-dashboard .text-wrapper-25 {
+    position: relative;
+    width: 93px;
+    margin-top: -1.00px;
+    margin-left: -17.50px;
+    margin-right: -17.50px;
+    font-family: var(--button-m-font-family);
+    font-weight: var(--button-m-font-weight);
+    color: #ffffff;
+    font-size: var(--button-m-font-size);
+    text-align: center;
+    letter-spacing: var(--button-m-letter-spacing);
+    line-height: var(--button-m-line-height);
+    font-style: var(--button-m-font-style);
+}
+
+.farmcia-dashboard .frame-4 {
+    background-image: url(./img/rectangle-8.svg);
+    position: relative;
+    width: 110px;
+    height: 32px;
+    background-size: 100% 100%;
+}
+
+.farmcia-dashboard .text-wrapper-26 {
+    position: relative;
+    width: 93px;
+    margin-top: -1.00px;
+    margin-left: -17.50px;
+    margin-right: -17.50px;
+    font-family: var(--button-m-font-family);
+    font-weight: var(--button-m-font-weight);
+    color: #797979;
+    font-size: var(--button-m-font-size);
+    text-align: center;
+    letter-spacing: var(--button-m-letter-spacing);
+    line-height: var(--button-m-line-height);
+    font-style: var(--button-m-font-style);
+}
+
+.farmcia-dashboard .frame-5 {
+    background-image: url(./img/rectangle-9.svg);
+    position: relative;
+    width: 110px;
+    height: 32px;
+    background-size: 100% 100%;
+}
+
+.farmcia-dashboard .menu-2 {
+    display: flex;
+    padding: 8px 80px;
+    align-self: stretch;
+    width: 100%;
+    background-color: var(--coolgray-10);
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 1;
+    flex-grow: 1;
+}
+
+.farmcia-dashboard .menu-item-2 {
+    display: inline-flex;
+    padding: 4px 16px;
+    flex: 0 0 auto;
+    background-color: #7bc4aa;
+    border-radius: 5px;
+    border: 1px solid;
+    border-color: #c1c7cd;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.farmcia-dashboard .text-wrapper-27 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--other-menu-m-font-family);
+    font-weight: var(--other-menu-m-font-weight);
+    color: #ffffff;
+    font-size: var(--other-menu-m-font-size);
+    text-align: center;
+    letter-spacing: var(--other-menu-m-letter-spacing);
+    line-height: var(--other-menu-m-line-height);
+    white-space: nowrap;
+    font-style: var(--other-menu-m-font-style);
+}
+
+.farmcia-dashboard .menu-item-3 {
+    display: flex;
+    width: 90px;
+    padding: 8px 16px;
+    border-radius: 5px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.farmcia-dashboard .text-wrapper-28 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    margin-right: -1.00px;
+    font-family: var(--other-menu-m-font-family);
+    font-weight: var(--other-menu-m-font-weight);
+    color: #21272a;
+    font-size: var(--other-menu-m-font-size);
+    text-align: center;
+    letter-spacing: var(--other-menu-m-letter-spacing);
+    line-height: var(--other-menu-m-line-height);
+    white-space: nowrap;
+    font-style: var(--other-menu-m-font-style);
+}
+
+.farmcia-dashboard .menu-item-4 {
+    display: inline-flex;
+    padding: 8px 16px;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.farmcia-dashboard .text-wrapper-29 {
+    position: relative;
+    width: fit-content;
+    margin-top: -1.00px;
+    font-family: var(--other-menu-m-font-family);
+    font-weight: var(--other-menu-m-font-weight);
+    color: #21272a;
+    font-size: var(--other-menu-m-font-size);
+    text-align: center;
+    letter-spacing: var(--other-menu-m-letter-spacing);
+    line-height: var(--other-menu-m-line-height);
+    white-space: nowrap;
+    font-style: var(--other-menu-m-font-style);
+}
+
+.farmcia-dashboard .menu-item-5 {
+    display: inline-flex;
+    height: 32px;
+    padding: 4px 16px;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.farmcia-dashboard .text-wrapper-30 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--other-menu-m-font-family);
+    font-weight: var(--other-menu-m-font-weight);
+    color: #21272a;
+    font-size: var(--other-menu-m-font-size);
+    text-align: center;
+    letter-spacing: var(--other-menu-m-letter-spacing);
+    line-height: var(--other-menu-m-line-height);
+    white-space: nowrap;
+    font-style: var(--other-menu-m-font-style);
+}
+
+.farmcia-dashboard .icon-jam-icons-2 {
+    background-image: url(./img/megaphone-outline.svg);
+    background-size: 100% 100%;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.farmcia-dashboard .text-wrapper-31 {
+    position: relative;
+    width: fit-content;
+    font-family: var(--other-menu-m-font-family);
+    font-weight: var(--other-menu-m-font-weight);
+    color: var(--coolgray-90);
+    font-size: var(--other-menu-m-font-size);
+    letter-spacing: var(--other-menu-m-letter-spacing);
+    line-height: var(--other-menu-m-line-height);
+    white-space: nowrap;
+    font-style: var(--other-menu-m-font-style);
+}
