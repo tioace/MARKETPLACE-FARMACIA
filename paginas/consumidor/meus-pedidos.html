@@ -2,39 +2,38 @@
 <html lang="pt-br">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClickFarma - Home Consumidor</title>
+    <title>ClickFarma - Meus Pedidos</title>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
-
+       
         :root {
-            --color-primary-90: #001d6c; 
-            --color-button-blue: #556cba; 
-            --color-alert: #da1e28; 
-            --color-active-nav-bg: #7bc4aa; 
+            --color-primary-90: #001d6c;
+            --color-button-blue: #556dba; 
+            --color-alert: #da1e28;
+            --color-active-nav-bg: #556dba;
+            --color-active-link: #7cc4ab; 
             --color-coolgray-10: #f2f4f8; 
             --color-coolgray-20: #dde1e6; 
-            --color-success: #3f8829; 
+            --color-success: #7cc4ab; 
             --color-text-dark: #273870; 
-            --color-text-status: #3f8829; 
+            --color-link-blue: #0f62fe; 
         }
 
-    
+        /* CLASSIFICADOR DE CORES */
         .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
         .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
         .bg-primary-90 { background-color: var(--color-primary-90); }
         .bg-button-blue { background-color: var(--color-button-blue); }
-        .bg-button-deeper-blue { background-color: #072d7e; }
         .bg-success { background-color: var(--color-success); }
-        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); }
-
+        .bg-active-link-nav { background-color: var(--color-active-nav-bg); }
         .text-primary-90 { color: var(--color-primary-90); }
         .text-button-blue { color: var(--color-button-blue); }
         .text-success { color: var(--color-success); }
         .text-text-dark { color: var(--color-text-dark); }
-        .text-text-status { color: var(--color-text-status); }
+        .text-link-blue { color: var(--color-link-blue); }
 
         .header-rascunho {
             position: sticky;
@@ -49,14 +48,12 @@
         
         .menu-principal .active-nav-item {
             background-color: var(--color-active-nav-bg);
-            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: white;
         }
-       
-        .search-button {
-            background-color: #556cba; 
+
+        .dashboard-content {
+            background-color: #f7f7f7; 
         }
 
         .search-input::placeholder {
@@ -68,8 +65,8 @@
 
     <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
         
-        
-        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+       
+        <header class="header-rascunho bg-white border-b border-coolgray-20 shadow-sm">
             <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
                 
                 <div class="logo flex items-center gap-2">
@@ -78,7 +75,7 @@
                     <span class="font-bold text-xl text-gray-700">ClickFarma</span>
                 </div>
 
-                
+                <!-- seleção de perfil -->
                 <nav class="profile-selection flex-wrap hidden lg:flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
                     <a href="#" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
                     <a href="#" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Consumidor</a>
@@ -88,31 +85,30 @@
                 </nav>
             </div>
 
-            
+            <!-- MENU DE NAVEGAÇÃO PRINCIPAL -->
             <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
                 <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
-                   
-                    <a href="farmaconnect_dashboard.html" class="nav-item active-nav-item flex items-center gap-2 p-2 rounded-lg text-sm font-medium">
-                        <i data-lucide="home" class="w-4 h-4 text-white"></i>
-                        <span class="text-white">Home Consumidor</span>
+                    <a href= "../dashboard/dashboard_consumidor.html"="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <a href="../dashboard/dashboard_consumidor.html">Home Consumidor</a>
                     </a>
-                    <a href="../consumidor/buscar_medicamento.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                    <a href="buscar_medicamento.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
                         <i data-lucide="search" class="w-4 h-4"></i>
                         <span>Buscar Medicamentos</span>
                     </a>
-                    <a href="../consumidor/Farmacias.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                    <a href="Farmacias.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
                         <i data-lucide="store" class="w-4 h-4"></i>
                         <span>Farmácias</span>
                     </a>
-                    <a href="../consumidor/meus-pedidos.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
-                        <i data-lucide="logs" class="w-4 h-4"></i>
-                        <span>Meus Pedidos</span>
+                    <a href="meus-pedidos.html" class="nav-item active-nav-item flex items-center gap-2 p-2 rounded-lg text-sm font-medium">
+                        <i data-lucide="logs" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Meus Pedidos</span>
                     </a>
-                    <a href="../consumidor/carrinho.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                    <a href="carrinho.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
                         <i data-lucide="shopping-cart" class="w-4 h-4"></i>
                         <span>Carrinho</span>
                     </a>
-                    <a href="../consumidor/minhas-receitas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                    <a href="minhas-receitas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
                         <i data-lucide="pill-bottle" class="w-4 h-4"></i>
                         <span>Receitas</span>
                     </a>
@@ -121,69 +117,30 @@
                         <span>Configurações</span>
                     </a>
                 </div>
-             
+                <!-- link de suporte -->
                 <a href="../suporte/suporte-consumidor.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
                     <i data-lucide="help-circle" class="w-4 h-4"></i>
                     <span class="hidden md:inline">Suporte</span>
                 </a>
             </nav>
         </header>
-        
+
+        <!-- CONTEÚDO PRINCIPAL E BUSCA AVANÇADA -->
         <main class="dashboard-content p-4 md:p-8 flex-1">
+
+        <div class="dashboard-content flex-grow p-6 md:p-8">
+            <h1 class="text-2xl font-bold mb-4 text-text-dark text-center">Meus Pedidos</h1>
+            <p class="text-gray-600 mb-8 text-center">wireframe da página "meus pedidos"</p>
+        </div>
             
-            <section class="top-section flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-                
+              <section class="top-section flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
                
                 <div class="search-and-button flex items-center gap-2 w-full md:flex-grow">
                     <div class="field flex items-center w-full h-12 gap-2 p-3 bg-coolgray-10 rounded-xl border border-gray-300">
-                        <i data-lucide="search" class="w-5 h-5 text-gray-500"></i>
-                        <input type="search" class="text search-input flex-1 border-none bg-transparent placeholder-gray-500 focus:outline-none text-sm" placeholder="Pesquisar produto, farmácia ou medicamento..." aria-label="Campo de pesquisa" />
+                        <h1 style="font-size: large;">Filtrar</h1><i data-lucide="filter" class="w-4 h-4 text-gray-500"></i>
                     </div>
-                    <button class="text-container-wrapper search-button h-12 px-4 bg-button-blue rounded-xl border-2 border-button-blue shadow-md text-white font-medium hover:opacity-90 transition duration-150">
-                        Buscar
-                    </button>
-                </div>
-
-               
-                <div class="buttons-group flex items-center gap-4 w-full md:w-auto justify-end">
-                    <a href="../consumidor/carrinho.html" class="button action-button cart-button relative flex items-center justify-center h-12 px-2 hover:bg-gray-100 rounded-lg">
-                        <i data-lucide="shopping-cart" class="w-6 h-6 text-primary-90"></i>
-                        <span class="badge absolute -top-1 right-0 flex items-center justify-center w-5 h-5 bg-alert rounded-full text-white text-xs font-semibold">9</span>
-                    </a>
-                    <a href="#" class="button-2 action-button account-button flex items-center justify-center h-12 px-2 hover:bg-gray-100 rounded-lg">
-                        <i data-lucide="user-square" class="w-6 h-6 text-primary-90"></i>
-                    </a>
                 </div>
             </section>
-            
-            
-            <section class="quick-access-links grid grid-cols-2 sm:grid-cols-4 gap-6 mb-10">
-                <a href="../consumidor/meus-pedidos.html" class="quick-link flex flex-col items-center text-center gap-3 p-4 bg-coolgray-10 rounded-lg shadow-inner hover:shadow-lg transition duration-150">
-                    <div class="placeholder-picture bg-coolgray-20 rounded-md w-full h-24 flex items-center justify-center">
-                        <i data-lucide="box" class="w-10 h-10 text-gray-500"></i>
-                    </div>
-                    <span class="text-sm font-medium text-gray-700">Meus Pedidos</span>
-                </a>
-                <a href="#" class="quick-link flex flex-col items-center text-center gap-3 p-4 bg-coolgray-10 rounded-lg shadow-inner hover:shadow-lg transition duration-150">
-                    <div class="placeholder-picture-2 bg-coolgray-20 rounded-md w-full h-24 flex items-center justify-center">
-                        <i data-lucide="receipt" class="w-10 h-10 text-gray-500"></i>
-                    </div>
-                    <span class="text-sm font-medium text-gray-700">Receitas</span>
-                </a>
-                <a href="#" class="quick-link flex flex-col items-center text-center gap-3 p-4 bg-coolgray-10 rounded-lg shadow-inner hover:shadow-lg transition duration-150">
-                    <div class="placeholder-picture-3 bg-coolgray-20 rounded-md w-full h-24 flex items-center justify-center">
-                        <i data-lucide="activity" class="w-10 h-10 text-gray-500"></i>
-                    </div>
-                    <span class="text-sm font-medium text-gray-700">Telemedicina</span>
-                </a>
-                <a href="#" class="quick-link flex flex-col items-center text-center gap-3 p-4 bg-coolgray-10 rounded-lg shadow-inner hover:shadow-lg transition duration-150">
-                    <div class="placeholder-picture-4 bg-coolgray-20 rounded-md w-full h-24 flex items-center justify-center">
-                        <i data-lucide="heart" class="w-10 h-10 text-gray-500"></i>
-                    </div>
-                    <span class="text-sm font-medium text-gray-700">Favoritos</span>
-                </a>
-            </section>
-
            
             <section class="recent-orders bg-white border border-gray-200 rounded-xl p-6 mb-10">
                 <h2 class="text-2xl font-medium text-gray-600 mb-6">Pedidos Recentes</h2>
@@ -199,7 +156,7 @@
                     </div>
                     <p class="order-status text-right flex flex-col gap-1">
                         <span class="font-medium text-base text-text-dark">R$ 45,90</span> 
-                        <span class="text-xs font-semibold text-text-status">Em trânsito</span>
+                        <span class="text-xs font-semibold text-text-status" style="color:#076910">Entregue</span>
                     </p>
                 </article>
 
@@ -214,7 +171,7 @@
                     </div>
                     <p class="order-status text-right flex flex-col gap-1">
                         <span class="font-medium text-base text-text-dark">R$ 45,90</span> 
-                        <span class="text-xs font-semibold text-text-status">Em trânsito</span>
+                        <span class="text-xs font-semibold text-text-status" style="color:#076910">Entregue</span>
                     </p>
                 </article>
 
@@ -228,7 +185,7 @@
                     </div>
                     <p class="order-status text-right flex flex-col gap-1">
                         <span class="font-medium text-base text-text-dark">R$ 45,90</span> 
-                        <span class="text-xs font-semibold text-text-status">Em trânsito</span>
+                        <span class="text-xs font-semibold text-text-status" style="color:#076910">Entregue</span>
                     </p>
                 </article>
             </section>
@@ -270,9 +227,21 @@
                     </article>
                 </div>
             </section>
-        </main>
-    </div>
 
+            <nav class="flex justify-center items-center mt-8 space-x-2" aria-label="Paginação">
+                        <button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-200 rounded-lg" aria-label="Página anterior">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                        <button class="w-8 h-8 flex items-center justify-center bg-primary-90 text-white font-medium rounded-lg">1</button>
+                        <button class="w-8 h-8 flex items-center justify-center text-gray-700 hover:bg-gray-200 rounded-lg">2</button>
+                        <button class="w-8 h-8 flex items-center justify-center text-gray-700 hover:bg-gray-200 rounded-lg">3</button>
+                        <button class="w-8 h-8 flex items-center justify-center text-gray-700 hover:bg-gray-200 rounded-lg">4</button>
+                        <button class="w-8 h-8 flex items-center justify-center text-gray-700 hover:bg-gray-200 rounded-lg">5</button>
+                        <button class="w-8 h-8 flex items-center justify-center text-gray-500 hover:bg-gray-200 rounded-lg" aria-label="Próxima página">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </nav>
+        </main>
     <script>
         lucide.createIcons();
     </script>

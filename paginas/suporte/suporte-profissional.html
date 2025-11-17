@@ -1,99 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Suporte do Consumidor</title>
-        <link rel="stylesheet" href="../../assets/css/suporte.css">
-        <!-- Biblioteca de ícones (Font Awesome) -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-        <!--Para usar as fontes-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suporte - consumidor</title>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        <body>
-            <header>
-            <!--Onde fica a parte da logo do ClickFarma-->
-                <div class="topo">
-                    <img class="logo" src="../../assets/img/PlaceHolder.jpg">
-                        <div class="clickfarma">ClickFarma Logo</div>
+    <link rel="stylesheet" href="../../assets/css/suporte.css">
+    
+    <style>
+       
+        :root {
+            --color-primary-90: #001d6c;
+            --color-button-blue: #556dba; 
+            --color-alert: #da1e28;
+            --color-active-nav-bg: #556dba;
+            --color-active-link: #7cc4ab; 
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #7cc4ab; 
+            --color-text-dark: #273870; 
+            --color-link-blue: #0f62fe; 
+        }
 
-                        <div class="configuracao"><i class="fa-solid fa-gear" ></i></div>
-                        <div class="perfil"><i class="fa-solid fa-circle-user" ></i></div>
-                </div>
-            </header>
+        /* CLASSIFICADOR DE CORES */
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-primary-90 { background-color: var(--color-primary-90); }
+        .bg-button-blue { background-color: var(--color-button-blue); }
+        .bg-success { background-color: var(--color-success); }
+        .bg-active-link-nav { background-color: var(--color-active-nav-bg); }
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-text-dark { color: var(--color-text-dark); }
+        .text-link-blue { color: var(--color-link-blue); }
 
-            <nav class="menu">
-                <div class="retangulo-naomarcado">
-                    <div><i class="fa-solid fa-house" style="color: #65696d"></i></div>
-                    <div class="texto-naomarcado">Home Profissional</div>
-                </div>
-                <div class="retangulo-naomarcado">
-                    <div class="texto-naomarcado">Pacientes</div>
-                </div>
-                <div class="retangulo-naomarcado">
-                    <div class="texto-naomarcado">Consultas</div>
-                </div>
-                <div class="retangulo-ultimo">
-                    <div class="texto-naomarcado">Prescrições</div>
-                </div>
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .profile-selection .active-profile {
+            background-color: var(--color-button-blue);
+            color: white;
+        }
+        
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg);
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard-content {
+            background-color: #f7f7f7; 
+        }
+
+        .search-input::placeholder {
+            color: #697077; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+       
+        <header class="header-rascunho bg-white border-b border-coolgray-20 shadow-sm">
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
                 
-                <div class="retangulo-marcado-suporte" padding-left: 10px>
-                    <div><i class="fa-solid fa-bullhorn" style="color: #ebeef1"></i></div>
-                    <div class="texto-marcado">Suporte</div>
+                <div class="logo flex items-center gap-2">
+                    <i class="w-6 h-6 text-gray-700"></i>
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                    <span class="font-bold text-xl text-gray-700">ClickFarma</span>
                 </div>
+
+                <!-- seleção de perfil -->
+                <nav class="profile-selection flex-wrap hidden lg:flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="#" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="#" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="#" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="#" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Profissional</a>
+                    <a href="#" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                </nav>
+            </div>
+
+            <!-- MENU DE NAVEGAÇÃO PRINCIPAL -->
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <a href= "../dashboard/dashboard_profissional.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span>Home Profissional</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="file-user" class="w-4 h-4"></i>
+                        <span>Pacientes</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="calendar-days" class="w-4 h-4"></i>
+                        <span>Consultas</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="pill-bottle" class="w-4 h-4"></i>
+                        <span>Prescrições</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="settings" class="w-4 h-4"></i>
+                        <span>Configurações</span>
+                    </a>
+                </div>
+                <!-- link de suporte -->
+                <a href="#" class="nav-item active-nav-item flex items-center gap-2 p-2 rounded-lg text-sm font-medium">
+                        <i data-lucide="help-circle" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Suporte</span>
+                    </a>
             </nav>
+        </header>
+        <div class="dashboard-content flex-grow p-6 md:p-8">
+            <h1 class="text-2xl font-bold mb-4 text-text-dark text-center">Suporte</h1>
+            <p class="text-gray-600 mb-8 text-center">wireframe da página suporte</p>
 
-            <div class="titulo">Suporte</div>
-            <div class="descricao">wireframe da página suporte</div>
-
-            <!--Opções-->
-            <div class="retangulo-central">
-                <table>
+            <!-- Opções de suporte -->
+            <div class="retangulo-central bg-white p-6 rounded-lg shadow-md">
+                <table class="w-full table-auto">
                     <tr>
-                        <th><div class="retangulo-opcoes">
+                        <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
                             <div class="texto-opcoes">Denunciar algo suspeito</div>
                         </div></th>
-                        <th><div class="retangulo-opcoes">
+                        <th>
+                        <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
-                            <div class="texto-opcoes">Problemas na plataforma</div>
+                            <div class="texto-opcoes">Problemas na plataforma?</div>
                         </div></th>
-                        <th><div class="retangulo-opcoes">
+                        <th>
+                        <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
                             <div class="texto-opcoes">Perguntas Frequentes</div>
                         </div></th>
+                        <th>
                     </tr>
                     <tr>
-                        <td><div class="retangulo-opcoes">
+                        <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
-                            <div class="texto-opcoes">Como cancelar a consulta?</div>
-                        </div></td>
-                        <td><div class="retangulo-opcoes">
+                            <div class="texto-opcoes">Como acessar o histórico do paciente?</div>
+                        </div></th>
+                        <th>
+                        <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
                             <div class="texto-opcoes">Como contato o paciente?</div>
-                        </div></td>
-                        <td><div class="retangulo-opcoes">
+                        </div></th>
+                        <th>
+                        <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
                             <div class="texto-opcoes">Precisa de mais ajuda?</div>
-                        </div></td>
+                        </div></th>
+                        <th>
                     </tr>
                 </table>
             </div>
+    </div>
 
-            <!--Barra de pesquisa-->
+    <!--Barra de pesquisa-->
             <div class="caixa-pesquisa">
             <div class="pesquisa-suporte">
                 <input type="text" placeholder="Encontrar mais soluções...">
-                <button><i class="fa-solid fa-magnifying-glass"></i>Buscar</button>
+                <button><i data-lucide="search" class="w-4 h-4"></i>Buscar</button>
             </div>
             </div>
             
             <!--Butão da página inicial-->
+            <a href = "../dashboard/dashboard_profissional.html">
             <div class="pagina-inicial">
                 <button>Página inicial</button>
             </div>
-        </body>
-    </head>
+            </a>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
