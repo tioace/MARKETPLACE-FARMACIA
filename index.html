@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Sua Farmácia Digital</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #7CC4AB; 
+            --color-alert: #da1e28;
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-link-blue: #556DBA; 
+        }
+
+        
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-primary-90 { background-color: var(--color-primary-90); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-text-dark { color: var(--color-text-dark); }
+        .text-link-blue { color: var(--color-link-blue); }
+
+        
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        
+        .profile-selection .active-profile {
+            background-color: var(--color-link-blue); 
+            color: white;
+        }
+        
+       
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white; 
+        }
+
+        .footer-section {
+            background-color: var(--color-coolgray-10);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .search-input::placeholder {
+            color: #697077;
+        }
+
+        
+        .search-general .search-input {
+            border: none;
+            background: transparent;
+        }
+        
+        .btn-buscar-hero {
+            background-color: var(--color-button-blue); 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+        <!-- HEADER FIXO (RASCUNHO / Seleção de Perfil) -->
+        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                <!-- Logo -->
+                <div class="logo flex items-center gap-2">
+                    <i class="w-6 h-6 text-gray-700"></i>
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                    <span class="font-bold text-xl text-gray-700">ClickFarma</span>
+                </div>
+
+                <!-- Seleção de Perfil -->
+                <nav class="profile-selection flex-wrap hidden lg:flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="#" class="profile-link active-profile text-white bg-link-blue rounded shadow-md px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                </nav>
+            </div>
+
+            <!-- MENU DE NAVEGAÇÃO PRINCIPAL (Home, Sobre, Como Funciona, etc.) -->
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <!-- Home (ATIVO - Usando 7CC4AB) -->
+                    <a href="index_publico.html" class="nav-item active-nav-item flex items-center gap-2 p-2 rounded-lg text-sm font-medium">
+                        <i data-lucide="home" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Home</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Sobre</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Como Funciona</span>
+                    </a>
+                    <a href="/paginas/cad-log/login.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Login</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Cadastro</span>
+                    </a>
+                </div>
+                <!-- Link de Suporte -->
+                <a href="#" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- SEÇÃO PRINCIPAL (HERO) -->
+        <main class="hero-section flex-1 p-4 md:p-12 text-center bg-white">
+            
+            <!-- SEÇÃO DE LOGIN E CADASTRO -->
+            <section class="login-bar border-b border-gray-200 p-4 md:px-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center max-w-4xl mx-auto mb-16">
+                <div class="logo flex items-center gap-2">
+                    <i class="w-6 h-6 text-gray-700"></i>
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                    <span class="font-bold text-xl text-gray-700">ClickFarma</span>
+                </div>
+                <div class="actions flex items-center gap-3">
+                    <button class="btn-log-in border border-gray-400 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-100 transition duration-150">
+                        Log In
+                    </button>
+                    <!-- Botão Cadastrar (Usando 556DBA) -->
+                    <button class="btn-cadastro bg-button-blue-custom text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-opacity-90 transition duration-150">
+                        Cadastrar
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Título Principal -->
+            <h1 class="text-3xl md:text-4xl font-light text-gray-700 mb-8">Sua Farmácia Digital</h1>
+
+            <!-- Botões de Ação Central -->
+            <div class="action-buttons flex justify-center gap-6 mb-12">
+                <!-- Buscar Medicamento (Usando 556DBA) -->
+                <button class="btn-medicamento bg-button-blue-custom text-white px-8 py-3 rounded-xl shadow-lg hover:bg-opacity-90 transition duration-150 text-base font-medium">
+                    Buscar Medicamento
+                </button>
+                <!-- Sou Farmácia (Usando 7CC4AB) -->
+                <button class="btn-farmacia bg-active-nav-bg text-white px-8 py-3 rounded-xl shadow-lg hover:bg-opacity-90 transition duration-150 text-base font-medium">
+                    Sou Farmácia
+                </button>
+            </div>
+
+            <!-- Campo de Pesquisa Geral -->
+            <div class="search-general flex justify-center mb-16">
+                <div class="flex w-full max-w-xl h-12 border border-gray-300 rounded-lg overflow-hidden shadow-sm">
+                    <div class="flex items-center px-4 bg-white">
+                        <i data-lucide="search" class="w-5 h-5 text-gray-500"></i>
+                    </div>
+                    <input type="search" class="search-input flex-1 bg-white placeholder-gray-500 focus:outline-none text-base p-2" placeholder="Pesquisar" aria-label="Pesquisa geral" />
+                    <!-- Botão Buscar (Usando 556DBA) -->
+                    <button class="btn-buscar bg-button-blue-custom text-white px-6 font-medium hover:bg-opacity-90 transition duration-150">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+
+            <!-- CARDS DE RECURSOS (3 Colunas) -->
+            <section class="recursos-grid grid grid-cols-1 md:grid-cols-3 gap-8 p-4 md:p-0">
+                
+                <!-- Card 1: Comparação de Preços -->
+                <article class="resource-card text-left">
+                    <div class="placeholder-picture bg-coolgray-20 rounded-xl w-full h-40 flex items-center justify-center mb-4">
+                        <i data-lucide="scale" class="w-16 h-16 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Comparação de Preços</h3>
+                    <p class="text-sm text-gray-600">Consulte preços em farmácias e economize</p>
+                </article>
+
+                <!-- Card 2: Entrega Rápida -->
+                <article class="resource-card text-left">
+                    <div class="placeholder-picture bg-coolgray-20 rounded-xl w-full h-40 flex items-center justify-center mb-4">
+                        <i data-lucide="zap" class="w-16 h-16 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Entrega Rápida</h3>
+                    <p class="text-sm text-gray-600">Receba seus medicamentos rapidamente</p>
+                </article>
+
+                <!-- Card 3: Receita Digital -->
+                <article class="resource-card text-left">
+                    <div class="placeholder-picture bg-coolgray-20 rounded-xl w-full h-40 flex items-center justify-center mb-4">
+                        <i data-lucide="file-check-2" class="w-16 h-16 text-gray-500"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Receita Digital</h3>
+                    <p class="text-sm text-gray-600">Upload de receitas e consultas online</p>
+                </article>
+
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer-section p-8 md:p-12 mt-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-gray-700 text-sm max-w-6xl mx-auto">
+                
+                <!-- Coluna 1: ClickFarma -->
+                <div class="footer-col">
+                    <h4 class="text-base font-semibold text-gray-900 mb-3">ClickFarma</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-link-blue">Sobre nós</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-link-blue">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 2: Para Consumidores -->
+                <div class="footer-col">
+                    <h4 class="text-base font-semibold text-gray-900 mb-3">Para Consumidores</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-link-blue">Como funciona</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-link-blue">Telemedicina</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Para Farmácias -->
+                <div class="footer-col">
+                    <h4 class="text-base font-semibold text-gray-900 mb-3">Para Farmácias</h4>
+                    <ul>
+                        <li class="mb-1"><a href="#" class="hover:text-link-blue">Cadastre-se</a></li>
+                        <li class="mb-1"><a href="#" class="hover:text-link-blue">Central de ajuda</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 4: Suporte -->
+                <div class="footer-col">
+                    <h4 class="text-base font-semibold text-gray-900 mb-3">Suporte</h4>
+                    <p class="mb-1">WhatsApp: (61) 91234-5678</p>
+                    <p class="mb-1">Email: contato@clickfarma.com</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script para inicializar os ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
