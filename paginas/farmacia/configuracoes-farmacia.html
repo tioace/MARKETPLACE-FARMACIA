@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Configurações da Farmácia</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #7CC4AB; 
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #3f8829; 
+            --color-link-blue: #0f62fe; 
+            --color-perfil-farmacia: #556DBA; 
+        }
+
+        
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-alert { color: var(--color-alert); }
+
+        
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        
+        .profile-selection .active-profile {
+            background-color: var(--color-perfil-farmacia); 
+            color: white;
+        }
+        
+        
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        
+      
+        .config-sidebar .active-link {
+            background-color: var(--color-coolgray-20); 
+            font-weight: 600;
+            color: var(--color-button-blue); 
+            border-left: 4px solid var(--color-button-blue); 
+        }
+        .config-sidebar a {
+            transition: background-color 0.1s;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            transition: border-color 0.15s;
+        }
+        .form-input:focus {
+            border-color: var(--color-button-blue);
+            outline: none;
+            box-shadow: 0 0 0 1px var(--color-button-blue);
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+       <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                
+                <div class="logo flex items-center gap-2">
+                    <i class="w-6 h-6 text-gray-700"></i>
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                    <!--incluir botao de volta p pag inicial-->
+                    <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
+                </div>
+
+
+                <!-- Seleção de Perfil (Farmácia Ativo - 556DBA) -->
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link active-profile text-white bg-button-blue-custom rounded shadow-md px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                </nav>
+            </div>
+
+            <!-- BARRA 2: NAVEGAÇÃO PRINCIPAL (Configurações Ativo - 7CC4AB) -->
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <!-- Home Farmácia -->
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="building-2" class="w-4 h-4"></i>
+                        <span>Home Farmácia</span>
+                    </a>
+                    <!-- Estoque -->
+                    <a href="estoque.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Estoque</span>
+                    </a>
+                    <!-- Pedidos -->
+                    <a href="pedidos-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Pedidos</span>
+                    </a>
+                    <!-- Relatórios -->
+                    <a href="relatorios-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Relatórios</span>
+                    </a>
+                    <!-- Configurações (ATIVO - 7CC4AB) -->
+                    <a href="configuracoes-farmacia.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                        <i data-lucide="settings" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Configurações</span>
+                    </a>
+                </div>
+                <!-- Link de Suporte -->
+                <a href="/paginas/suporte/suporte-farmacia.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL: CONFIGURAÇÕES -->
+        <main class="main-content flex-1 p-4 md:p-8 flex flex-col lg:flex-row gap-8">
+            
+            <!-- Título Principal da Página (Mobile) -->
+            <div class="w-full mb-6 lg:hidden">
+                <h1 class="text-3xl font-bold text-gray-800">Configurações</h1>
+            </div>
+
+            <!-- MENU LATERAL (Sidebar de Configurações) -->
+            <aside class="w-full lg:w-64 bg-white p-4 border border-gray-200 rounded-xl flex-shrink-0 h-fit shadow-md config-sidebar">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4 hidden lg:block">Configurações</h3>
+                
+                <nav class="flex flex-col space-y-1">
+                    <a href="#geral" class="flex items-center gap-3 p-3 text-gray-700 font-medium hover:bg-gray-100 active-link transition duration-150">
+                        <i data-lucide="info" class="w-5 h-5"></i>
+                        <span>Geral e Contato</span>
+                    </a>
+                    <a href="#pedidos" class="flex items-center gap-3 p-3 text-gray-700 font-medium hover:bg-gray-100 transition duration-150 rounded-lg">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        <span>Processamento de Pedidos</span>
+                    </a>
+                    <a href="#entrega" class="flex items-center gap-3 p-3 text-gray-700 font-medium hover:bg-gray-100 transition duration-150 rounded-lg">
+                        <i data-lucide="truck" class="w-5 h-5"></i>
+                        <span>Configurações de Entrega</span>
+                    </a>
+                    <a href="#seguranca" class="flex items-center gap-3 p-3 text-gray-700 font-medium hover:bg-gray-100 transition duration-150 rounded-lg">
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                        <span>Segurança e Senha</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- CONTEÚDO PRINCIPAL: SEÇÕES DE CONFIGURAÇÃO -->
+            <section class="flex-1 bg-white p-6 border border-gray-200 rounded-xl shadow-md space-y-10">
+                
+                <!-- 1. SEÇÃO GERAL E CONTATO -->
+                <div id="geral">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Geral e Contato</h2>
+                    <form class="space-y-4">
+                        
+                        <!-- Nome da Farmácia -->
+                        <div>
+                            <label for="nome_farmacia" class="block text-sm font-medium text-gray-700 mb-1">Nome da Farmácia</label>
+                            <input type="text" id="nome_farmacia" value="Farma São João" class="form-input" />
+                        </div>
+                        
+                        <!-- CNPJ (Não editável) -->
+                        <div>
+                            <label for="cnpj" class="block text-sm font-medium text-gray-700 mb-1">CNPJ</label>
+                            <input type="text" id="cnpj" value="12.345.678/0001-90" class="form-input bg-gray-100 cursor-not-allowed" disabled />
+                        </div>
+
+                        <!-- Telefone e Email -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="telefone" class="block text-sm font-medium text-gray-700 mb-1">Telefone de Contato</label>
+                                <input type="tel" id="telefone" value="(61) 98765-4321" class="form-input" />
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Principal</label>
+                                <input type="email" id="email" value="contato@farmasaojoao.com" class="form-input" />
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex justify-end">
+                            <button type="submit" class="bg-button-blue-custom text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:opacity-90 transition duration-150">
+                                Salvar Contato
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 2. SEÇÃO PROCESSAMENTO DE PEDIDOS -->
+                <div id="pedidos">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Processamento de Pedidos</h2>
+                    <form class="space-y-4">
+                        
+                        <!-- Tempo Máximo de Processamento -->
+                        <div>
+                            <label for="tempo_processamento" class="block text-sm font-medium text-gray-700 mb-1">Tempo Máximo de Preparação (minutos)</label>
+                            <input type="number" id="tempo_processamento" value="30" min="5" max="120" class="form-input" />
+                            <p class="text-xs text-gray-500 mt-1">Tempo limite para a farmácia separar o pedido antes de ser cancelado automaticamente.</p>
+                        </div>
+                        
+                        <!-- Notificações de Pedido -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Notificações de Novos Pedidos</label>
+                            <div class="flex items-center space-x-4">
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" checked class="form-checkbox text-button-blue-custom" />
+                                    <span class="ml-2 text-gray-700">Notificação Sonora</span>
+                                </label>
+                                <label class="inline-flex items-center">
+                                    <input type="checkbox" checked class="form-checkbox text-button-blue-custom" />
+                                    <span class="ml-2 text-gray-700">Email Imediato</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex justify-end">
+                            <button type="submit" class="bg-button-blue-custom text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:opacity-90 transition duration-150">
+                                Salvar Pedidos
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- 3. SEÇÃO CONFIGURAÇÕES DE ENTREGA -->
+                <div id="entrega">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Configurações de Entrega</h2>
+                    <form class="space-y-4">
+                        
+                        <!-- Raio de Cobertura -->
+                        <div>
+                            <label for="raio_entrega" class="block text-sm font-medium text-gray-700 mb-1">Raio Máximo de Entrega (Km)</label>
+                            <input type="number" id="raio_entrega" value="5" min="1" max="50" class="form-input" />
+                            <p class="text-xs text-gray-500 mt-1">Área máxima de cobertura para entregadores próprios.</p>
+                        </div>
+
+                        <!-- Valor Mínimo de Pedido -->
+                        <div>
+                            <label for="valor_minimo" class="block text-sm font-medium text-gray-700 mb-1">Valor Mínimo para Entrega Grátis (R$)</label>
+                            <input type="number" id="valor_minimo" value="50.00" step="5.00" class="form-input" />
+                        </div>
+                        
+                        <!-- Opção de Retirada na Loja -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Opções de Serviço</label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" checked class="form-checkbox text-button-blue-custom" />
+                                <span class="ml-2 text-gray-700">Permitir Retirada na Loja (Pick-up)</span>
+                            </label>
+                        </div>
+
+                        <div class="pt-4 flex justify-end">
+                            <button type="submit" class="bg-button-blue-custom text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:opacity-90 transition duration-150">
+                                Salvar Entrega
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- 4. SEÇÃO SEGURANÇA -->
+                <div id="seguranca">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-2">Segurança e Senha</h2>
+                    <form class="space-y-4">
+                        
+                        <!-- Senha Atual -->
+                        <div>
+                            <label for="senha_atual" class="block text-sm font-medium text-gray-700 mb-1">Senha Atual</label>
+                            <input type="password" id="senha_atual" placeholder="********" class="form-input" />
+                        </div>
+
+                        <!-- Nova Senha e Confirmação -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="nova_senha" class="block text-sm font-medium text-gray-700 mb-1">Nova Senha</label>
+                                <input type="password" id="nova_senha" placeholder="Mínimo 8 caracteres" class="form-input" />
+                            </div>
+                            <div>
+                                <label for="confirmar_senha" class="block text-sm font-medium text-gray-700 mb-1">Confirmar Nova Senha</label>
+                                <input type="password" id="confirmar_senha" placeholder="Confirme sua nova senha" class="form-input" />
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex justify-end">
+                            <button type="submit" class="bg-button-blue-custom text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:opacity-90 transition duration-150">
+                                Alterar Senha
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        // Simulação de clique no menu lateral para focar na seção
+        document.querySelectorAll('.config-sidebar a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active de todos
+                document.querySelectorAll('.config-sidebar a').forEach(item => {
+                    item.classList.remove('active-link');
+                    item.classList.remove('border-l-4');
+                });
+                
+                // Adiciona active no clicado
+                this.classList.add('active-link');
+                
+                // Scroll suave para a seção
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

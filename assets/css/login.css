@@ -12,113 +12,129 @@
 
 
 .container{
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+height: 100vh;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .form{
-  max-width: 480px;
-  width: 100%;
-  padding: 30px;
-  border-style: outset;
-  border-color: black;
-  border-radius: 6px;
+max-width: 480px;
+width: 100%;
+padding: 30px;
+border-style: outset;
+border-color: black;
+border-radius: 6px;
 }
 
 h2{
-  font-size: 28px;
-  font-weight: 600;
-  color: black;
-  text-align: center;
-
+font-size: 28px;
+font-weight: 600;
+color: black;
+text-align: center;
 }
 
 form{
-  margin-top: 30px;
+margin-top: 30px;
 }
 
 form .field{
-  position: relative;
-  height: 45px;
-  width: 100%;
-  margin-top: 20px;
+position: relative;
+height: 45px;
+width: 100%;
+margin-top: 20px;
 }
 
 .field input{
-  height: 100%;
-  width: 100%;
-  border: 1px solid #CACACA;
-  padding: 0 15px;
+height: 100%;
+width: 100%;
+border: 1px solid #CACACA;
+padding: 0 15px;
 }
 
 .eye-icon{
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #8b8b8b;
+position: absolute;
+top: 50%;
+right: 10px;
+transform: translateY(-50%);
+font-size: 18px;
+color: #8b8b8b;
 }
 
 .form-link{
-  text-align: center;
-  margin-top: 10px; 
+text-align: center;
+margin-top: 10px; 
 }
 
 .form-link a, .form-link span{
-  font-size: 14px;
-  font-weight: 400;
+font-size: 14px;
+font-weight: 400;
 }
 
 .form a{
-  text-decoration: none;
-  color: #556DBA;
+text-decoration: none;
+color: #556DBA; /* Cor de link customizada */
 }
 
 .form a:hover{
-  text-decoration: underline;
+text-decoration: underline;
+}
+
+.entrar-field input{
+    background: #556DBA; /* Cor do botão customizada */
+    color: #fff;
+    cursor: pointer;
+    border: none;
 }
 
 .entrar-field input:hover{
-  background: #556DBA;
-  color: #fff;
+background: #4a62a0;
 }
 
 .form-link .criar-conta{
-  color: #556DBA;
+color: #556DBA;
 }
 
 .line{
-  position: relative;
-  height: 1px;
-  width: 100%;
-  margin: 36px 0;
-  background-color: #d4d4d4;
+position: relative;
+height: 1px;
+width: 100%;
+margin: 36px 0;
+background-color: #d4d4d4;
 }
 
 .line::before{
-  content: 'Ou';
-  position: absolute;
-  top: 50%;
-  right: 40%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  color: #232836;
-  padding: 0 15px;
+content: 'Ou';
+position: absolute;
+top: 50%;
+left: 50%; /* Centralizado no lugar do right: 40% */
+transform: translate(-50%, -50%);
+background-color: #fff;
+color: #232836;
+padding: 0 15px;
 } 
 
-.media-option{
-  display: block;
-  align-items: center;
-  align-content: space-between;
+.media-options{
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
+
+.media-options a { text-decoration: none; }
 
 .media-options a i{
-  border: 2px solid rgb(96 139 168);
-  border-radius: 5px;
-  padding: 1em;
+border: 2px solid #CACACA;
+border-radius: 5px;
+padding: 10px;
+display: block;
+color: #556DBA; /* Cor dos ícones sociais */
 }
-
+/* Estilo para garantir que o texto apareça inline com o ícone (Boxicons) */
+.media-options a p {
+    display: inline;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 500;
+}

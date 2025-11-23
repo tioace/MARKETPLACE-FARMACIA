@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Ganhos e Carteira</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #7CC4AB; 
+            --color-alert: #da1e28; 
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #3f8829; 
+            --color-link-blue: #0f62fe; 
+            --color-perfil-entregador: #556DBA; 
+        }
+
+        
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
+
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-alert { color: var(--color-alert); }
+
+        
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        
+        .profile-selection .active-profile {
+            background-color: var(--color-perfil-entregador); 
+            color: white;
+        }
+        
+        
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        
+        .wallet-card {
+            background: linear-gradient(135deg, var(--color-button-blue) 0%, #4a62a0 100%);
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }
+
+        
+        .metric-ganhos-card {
+            border: 1px solid var(--color-coolgray-20);
+            background-color: white;
+        }
+        
+        .transaction-item {
+            border-bottom: 1px solid var(--color-coolgray-20);
+        }
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                
+                <div class="logo flex items-center gap-2">
+                    <i class="w-6 h-6 text-gray-700"></i>
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                    <!--incluir botao de volta p pag inicial-->
+                    <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
+                </div>
+
+                <!-- Seleção de Perfil (Entregador Ativo - 556DBA) -->
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link active-profile text-white bg-button-blue-custom rounded shadow-md px-3 py-1">Entregador</a>
+                </nav>
+            </div>
+
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <!-- Home Entregador -->
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="motorbike" class="w-4 h-4"></i>
+                        <span>Home Entregador</span>
+                    </a>
+                    <!-- Rotas Ativas -->
+                    <a href="rotas_ativas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Rotas Ativas</span>
+                    </a>
+                    <!-- Histórico -->
+                    <a href="historicos.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Histórico</span>
+                    </a>
+             
+                    <a href="ganhos.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                        <i data-lucide="dollar-sign" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Ganhos</span>
+                    </a>
+                </div>
+                <!-- Link de Suporte -->
+                <a href="/paginas/suporte/suporte-entregador.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL: GANHOS E CARTEIRA -->
+        <main class="main-content flex-1 p-4 md:p-8">
+            
+            <header class="mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Meus Ganhos</h1>
+                <p class="text-sm text-gray-500 mt-1">Gerencie sua carteira digital e histórico de pagamentos.</p>
+            </header>
+            
+            <!-- CARTEIRA DIGITAL E MÉTRICAS (2 COLUNAS) -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+                
+                <!-- COLUNA 1/3: CARTEIRA DIGITAL -->
+                <div class="lg:col-span-1">
+                    <div class="wallet-card p-6 rounded-xl h-full flex flex-col justify-between">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-semibold">Saldo Disponível</h2>
+                            <i data-lucide="wallet" class="w-6 h-6"></i>
+                        </div>
+                        
+                        <div class="text-left mb-6">
+                            <p class="text-sm opacity-80">Saldo para saque:</p>
+                            <p class="text-5xl font-bold">R$ 568<span class="text-3xl">.75</span></p>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <!-- Botão Sacar (Verde/Teal) -->
+                            <button class="flex-1 bg-active-nav-bg text-white px-4 py-2 rounded-lg font-semibold hover:bg-opacity-90 transition">
+                                <i data-lucide="arrow-down-circle" class="w-4 h-4 inline mr-1"></i> Sacar
+                            </button>
+                            <!-- Botão Detalhes (Cinza) -->
+                            <button class="flex-1 bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-gray-300 transition">
+                                Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA 2/3: MÉTRICAS DE GANHOS -->
+                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    
+                    <!-- Métrica 1: Ganhos da Semana -->
+                    <div class="metric-ganhos-card p-4 rounded-xl text-center">
+                        <p class="text-2xl font-bold text-gray-800 mb-1">R$ 310,00</p>
+                        <p class="text-sm font-medium text-gray-600">Ganhos desta Semana</p>
+                    </div>
+
+                    <!-- Métrica 2: Entregas Realizadas -->
+                    <div class="metric-ganhos-card p-4 rounded-xl text-center">
+                        <p class="text-2xl font-bold text-gray-800 mb-1">38</p>
+                        <p class="text-sm font-medium text-gray-600">Entregas Realizadas</p>
+                    </div>
+
+                    <!-- Métrica 3: Média por Entrega -->
+                    <div class="metric-ganhos-card p-4 rounded-xl text-center">
+                        <p class="text-2xl font-bold text-gray-800 mb-1">R$ 8,16</p>
+                        <p class="text-sm font-medium text-gray-600">Média por Entrega</p>
+                    </div>
+
+                    <!-- Métrica 4: Ganhos do Mês -->
+                    <div class="metric-ganhos-card p-4 rounded-xl text-center sm:col-span-3">
+                        <p class="text-3xl font-bold text-gray-800 mb-1">R$ 1.840,50</p>
+                        <p class="text-sm font-medium text-gray-600">Ganhos Acumulados no Mês</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- HISTÓRICO DE TRANSAÇÕES -->
+            <section class="bg-white p-6 rounded-xl shadow-md">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Histórico de Transações</h2>
+                
+                <div class="space-y-1">
+                    
+                    <!-- Cabeçalho da Tabela (Fictício) -->
+                    <div class="transaction-item flex justify-between items-center py-2 text-xs font-semibold text-gray-500 border-b-2">
+                        <span class="w-1/4">TIPO</span>
+                        <span class="w-1/4">DESCRIÇÃO</span>
+                        <span class="w-1/4 text-right">VALOR</span>
+                        <span class="w-1/4 text-right">DATA</span>
+                    </div>
+
+                    <!-- Transação 1: Saque (Negativo/Vermelho) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-red-500">
+                            <i data-lucide="credit-card" class="w-4 h-4"></i> Saque
+                        </div>
+                        <span class="w-1/4 text-gray-700">Transferência PIX</span>
+                        <span class="w-1/4 text-right text-red-500 font-semibold">- R$ 500,00</span>
+                        <span class="w-1/4 text-right text-gray-500">22/11/2025</span>
+                    </div>
+                    
+                    <!-- Transação 2: Pagamento (Positivo/Verde) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-green-600">
+                            <i data-lucide="package" class="w-4 h-4"></i> Pagamento
+                        </div>
+                        <span class="w-1/4 text-gray-700">Entrega #00125</span>
+                        <span class="w-1/4 text-right text-green-600 font-semibold">+ R$ 8,75</span>
+                        <span class="w-1/4 text-right text-gray-500">23/11/2025</span>
+                    </div>
+
+                    <!-- Transação 3: Pagamento (Positivo/Verde) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-green-600">
+                            <i data-lucide="package" class="w-4 h-4"></i> Pagamento
+                        </div>
+                        <span class="w-1/4 text-gray-700">Entrega #00126</span>
+                        <span class="w-1/4 text-right text-green-600 font-semibold">+ R$ 15,25</span>
+                        <span class="w-1/4 text-right text-gray-500">23/11/2025</span>
+                    </div>
+
+                    <!-- Transação 4: Ajuste (Positivo/Verde) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-blue-500">
+                            <i data-lucide="refresh-cw" class="w-4 h-4"></i> Ajuste
+                        </div>
+                        <span class="w-1/4 text-gray-700">Reembolso Pedido #0120</span>
+                        <span class="w-1/4 text-right text-blue-500 font-semibold">+ R$ 2,50</span>
+                        <span class="w-1/4 text-right text-gray-500">21/11/2025</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

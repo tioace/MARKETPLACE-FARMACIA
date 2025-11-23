@@ -77,9 +77,9 @@
                 </div>
 
                 <!-- seleção de perfil -->
-                  <nav class="profile-selection flex-wrap hidden lg:flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
-                    <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
-                    <a href="../dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Consumidor</a>
+                <nav class="profile-selection flex-wrap hidden lg:flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="../../index.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Público</a>
+                    <a href="../dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
                     <a href="../dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
                     <a href="../dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
                     <a href="../dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
@@ -87,37 +87,47 @@
             </div>
 
             <!-- MENU DE NAVEGAÇÃO PRINCIPAL -->
-              <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
                 <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
-                    
-                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="nav-item flex items-center gap-2 p-2 text-sm font-medium">
-                        <i data-lucide="building-2" class="w-4 h-4 text-gray-700"></i>
-                        <span class="text-gray-700">Home Farmácia</span>
+                    <a href= "../dashboard/dashboard_consumidor.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        <span>Home Consumidor</span>
                     </a>
-                    <a href="../farmacia/estoque.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
-                        <span>Estoque</span>
+                    <a href="../consumidor/buscar_medicamento.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="search" class="w-4 h-4"></i>
+                        <span>Buscar Medicamentos</span>
                     </a>
-                    <a href="../farmacia/pedidos-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
-                        <span>Pedidos</span>
+                    <a href="../consumidor/Farmacias.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="store" class="w-4 h-4"></i>
+                        <span>Farmácias</span>
                     </a>
-                    <a href="../farmacia/relatorios-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
-                        <span>Relatórios</span>
+                    <a href="../consumidor/meus-pedidos.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="logs" class="w-4 h-4"></i>
+                        <span>Meus Pedidos</span>
                     </a>
-                    <a href="../farmacia/configuracoes-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                    <a href="../consumidor/carrinho.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                        <span>Carrinho</span>
+                    </a>
+                    <a href="../consumidor/minhas-receitas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="pill-bottle" class="w-4 h-4"></i>
+                        <span>Receitas</span>
+                    </a>
+                    <a href="#" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="settings" class="w-4 h-4"></i>
                         <span>Configurações</span>
                     </a>
                 </div>
                 <!-- link de suporte -->
-                <a href="suporte-farmacia.html" class="nav-item active-nav-item flex items-center gap-2 p-2 rounded-lg text-sm font-medium">
-                    <i data-lucide="help-circle" class="w-4 h-4 text-white"></i>
-                    <span class="text-white">Suporte</span>
-                </a>
-                    
+                <a href="#" class="nav-item active-nav-item flex items-center gap-2 p-2 rounded-lg text-sm font-medium">
+                        <i data-lucide="help-circle" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Suporte</span>
+                    </a>
             </nav>
         </header>
         <div class="dashboard-content flex-grow p-6 md:p-8">
             <h1 class="text-2xl font-bold mb-4 text-text-dark text-center">Suporte</h1>
-            <p class="text-gray-600 mb-8 text-center">Suporte & Ajuda</p>
+            <p class="text-gray-600 mb-8 text-center">wireframe da página suporte</p>
 
             <!-- Opções de suporte -->
             <div class="retangulo-central bg-white p-6 rounded-lg shadow-md">
@@ -130,7 +140,7 @@
                         <th>
                         <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
-                            <div class="texto-opcoes">Problemas na plataforma?</div>
+                            <div class="texto-opcoes">Devoluções e Reembolsos</div>
                         </div></th>
                         <th>
                         <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
@@ -142,12 +152,12 @@
                     <tr>
                         <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
-                            <div class="texto-opcoes">Não consegue atualizar o estoque?</div>
+                            <div class="texto-opcoes">Onde está meu pedido?</div>
                         </div></th>
                         <th>
                         <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
                             <img class="placeholder-opcoes" src="../../assets/img/PlaceHolder.jpg">
-                            <div class="texto-opcoes">Como contato o entregador?</div>
+                            <div class="texto-opcoes">Dúvidas sobre telemedicina?</div>
                         </div></th>
                         <th>
                         <th><div class="retangulo-opcoes hover:shadow-lg transition duration-150">
@@ -169,7 +179,7 @@
             </div>
             
             <!--Butão da página inicial-->
-            <a href = "../dashboard/dashboard_farmacia.html">
+            <a href = "../dashboard/dashboard_consumidor.html">
             <div class="pagina-inicial">
                 <button>Página inicial</button>
             </div>

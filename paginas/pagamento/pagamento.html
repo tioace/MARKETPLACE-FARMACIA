@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Finalizar Compra</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #7CC4AB; 
+            --color-alert: #da1e28; 
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #3f8829; 
+            --color-link-blue: #0f62fe; 
+            --color-perfil-consumidor: #556DBA; 
+            --color-highlight: #7CC4AB; 
+            --color-total: #000; 
+        }
+
+        
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
+
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-alert { color: var(--color-alert); }
+
+        
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        
+        .profile-selection .active-profile {
+            background-color: var(--color-perfil-consumidor); 
+            color: white;
+        }
+        
+        
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        /* Estilos específicos da página de Pagamento */
+        .card-detalhes, .card-metodo {
+            padding: 24px;
+            border: 1px solid var(--color-coolgray-20);
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .item-produto {
+            border-bottom: 1px dashed var(--color-coolgray-20);
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .metodo-pagamento-btn {
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--color-coolgray-20);
+            transition: all 0.2s;
+            cursor: pointer;
+            background-color: var(--color-coolgray-10);
+            color: #4b5563;
+        }
+        .metodo-pagamento-btn.active {
+            border-color: var(--color-button-blue);
+            background-color: white;
+            box-shadow: 0 0 0 2px var(--color-button-blue);
+            color: var(--color-button-blue);
+            font-weight: 600;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+       <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                
+                <div class="logo flex items-center gap-2">
+                    <i class="w-6 h-6 text-gray-700"></i>
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                    <!--incluir botao de volta p pag inicial-->
+                    <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
+                </div>
+
+
+                <!-- Seleção de Perfil (Consumidor Ativo - 556DBA) -->
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue-custom rounded shadow-md px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                </nav>
+            </div>
+
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <!-- Home Consumidor -->
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Home Consumidor</span>
+                    </a>
+                    <!-- Buscar Medicamentos -->
+                    <a href="/paginas/consumidor/buscar_medicamento.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Buscar Medicamentos</span>
+                    </a>
+                    <!-- Farmácias -->
+                    <a href="/paginas/consumidor/Farmacias.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Farmácias</span>
+                    </a>
+                    <!-- Meus Pedidos -->
+                    <a href="/paginas/consumidor/meus-pedidos.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Meus Pedidos</span>
+                    </a>
+               
+                    <a href="/paginas/consumidor/carrinho.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                        <i data-lucide="shopping-cart" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Carrinho</span>
+                    </a>
+                    <!-- Receitas -->
+                    <a href="/paginas/consumidor/minhas-receitas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Receitas</span>
+                    </a>
+                </div>
+                <!-- Link de Suporte -->
+                <a href="/paginas/suporte/suporte-consumidor.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL: PAGAMENTO -->
+        <main class="main-content flex-1 p-4 md:p-8">
+            
+            <header class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Pagamento</h1>
+                <p class="text-gray-600 mt-2">Revise seus detalhes e escolha o método de pagamento</p>
+            </header>
+            
+            <!-- DETALHES E MÉTODO/ENDEREÇO (2 COLUNAS) -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Coluna Esquerda: Detalhes da Compra -->
+                <div class="card-detalhes flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Detalhes da Compra</h2>
+                        
+                        <!-- Lista de Produtos -->
+                        <div class="space-y-4 mb-6">
+                            <!-- Produto 1 -->
+                            <div class="item-produto flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-coolgray-20 rounded-md flex items-center justify-center text-gray-500"><i data-lucide="pills" class="w-4 h-4"></i></div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Produto 1 (x1)</p>
+                                        <p class="text-xs text-gray-500">Farmácia Popular</p>
+                                    </div>
+                                </div>
+                                <span class="font-semibold text-gray-700">R$ 45,90</span>
+                            </div>
+                            <!-- Produto 2 -->
+                            <div class="item-produto flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-coolgray-20 rounded-md flex items-center justify-center text-gray-500"><i data-lucide="pills" class="w-4 h-4"></i></div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Produto 2 (x1)</p>
+                                        <p class="text-xs text-gray-500">Farmácia Popular</p>
+                                    </div>
+                                </div>
+                                <span class="font-semibold text-gray-700">R$ 45,90</span>
+                            </div>
+                            <!-- Produto 3 -->
+                            <div class="item-produto flex justify-between items-center">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-coolgray-20 rounded-md flex items-center justify-center text-gray-500"><i data-lucide="pills" class="w-4 h-4"></i></div>
+                                    <div>
+                                        <p class="font-medium text-gray-800">Produto 3 (x1)</p>
+                                        <p class="text-xs text-gray-500">Farmácia Popular</p>
+                                    </div>
+                                </div>
+                                <span class="font-semibold text-gray-700">R$ 45,90</span>
+                            </div>
+                        </div>
+
+                        <!-- Resumo de Valores -->
+                        <div class="space-y-1 text-sm mb-6">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Subtotal:</span>
+                                <span class="text-gray-800">R$ 137,70</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Descontos:</span>
+                                <span class="text-red-500">- R$ 13,77 (10% Pix)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600">Frete:</span>
+                                <span class="text-gray-800">R$ 10,00</span>
+                            </div>
+                            <div class="flex justify-between pt-2 font-bold text-lg border-t border-gray-300 mt-2">
+                                <span class="text-gray-800">Total:</span>
+                                <span class="text-gray-800">R$ 133,93</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão Voltar (Verde/Teal) -->
+                    <button class="w-full bg-active-nav-bg text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">
+                        Voltar
+                    </button>
+                </div>
+
+                <!-- Coluna Direita: Método de Pagamento e Endereço -->
+                <div class="space-y-8">
+                    
+                    <!-- Escolha do Método de Pagamento -->
+                    <div class="card-metodo">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Escolha seu método de pagamento</h2>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <!-- PIX (Ativo) -->
+                            <label class="metodo-pagamento-btn active flex items-center gap-2 w-full sm:w-auto">
+                                <input type="radio" name="pagamento" value="pix" checked class="form-radio text-button-blue-custom hidden" />
+                                <i data-lucide="credit-card" class="w-5 h-5"></i> 
+                                PIX <span class="text-success text-xs ml-1">(Desconto de 10%)</span>
+                            </label>
+                            <!-- Cartão -->
+                            <label class="metodo-pagamento-btn flex items-center gap-2 w-full sm:w-auto">
+                                <input type="radio" name="pagamento" value="cartao" class="form-radio text-button-blue-custom hidden" />
+                                <i data-lucide="credit-card" class="w-5 h-5"></i> Cartão
+                            </label>
+                            <!-- Boleto -->
+                            <label class="metodo-pagamento-btn flex items-center gap-2 w-full sm:w-auto">
+                                <input type="radio" name="pagamento" value="boleto" class="form-radio text-button-blue-custom hidden" />
+                                <i data-lucide="clipboard-list" class="w-5 h-5"></i> Boleto
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Endereço -->
+                    <div class="card-metodo">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">Endereço de Entrega</h2>
+                        
+                        <div class="space-y-2 text-sm text-gray-700 mb-6">
+                            <p>CEP: <span class="font-medium">72000-000</span></p>
+                            <p>CIDADE: <span class="font-medium">Brasília</span></p>
+                            <p>BAIRRO: <span class="font-medium">Setor Central</span></p>
+                            <p>RUA: <span class="font-medium">Rua da Matriz, Q. 15, Lt. 2A</span></p>
+                            <p>CASA/APARTAMENTO: <span class="font-medium">Apt. 301</span></p>
+                            <p>PONTO DE REFERÊNCIA: <span class="font-medium">Próximo à padaria</span></p>
+                            <p>COMPLEMENTO: <span class="font-medium">Bloco A</span></p>
+                        </div>
+                        
+                        <div class="flex justify-between gap-4">
+                            <!-- Botão Trocar Endereço (Azul) -->
+                            <button class="bg-button-blue-custom text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">
+                                Trocar endereço
+                            </button>
+                            <!-- Botão Confirmar (Verde/Teal) -->
+                            <button class="bg-active-nav-bg text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">
+                                Confirmar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Botão Finalizar Compra -->
+            <div class="flex justify-center mt-10">
+                <a href="confirmacao.html" button class="w-full lg:w-1/2 bg-button-blue-custom text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition shadow-xl">
+                    FINALIZAR COMPRA
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Controla o estado ativo do método de pagamento
+        document.querySelectorAll('input[name="pagamento"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                document.querySelectorAll('.metodo-pagamento-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                if (this.checked) {
+                    this.parentElement.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

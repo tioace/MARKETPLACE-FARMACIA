@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Gestão de Estoque</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #7CC4AB; 
+            --color-alert: #da1e28; 
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #3f8829; 
+            --color-link-blue: #0f62fe; 
+            --color-perfil-farmacia: #556DBA; 
+        }
+
+        
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-alert { color: var(--color-alert); }
+
+        
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        
+        .profile-selection .active-profile {
+            background-color: var(--color-perfil-farmacia); 
+            color: white;
+        }
+        
+        
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        
+        .product-stock-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            transition: transform 0.1s;
+        }
+        .product-stock-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        .product-image-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: var(--color-coolgray-20);
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                
+                <div class="logo flex items-center gap-2">
+                    <i class="w-6 h-6 text-gray-700"></i>
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                    <!--incluir botao de volta p pag inicial-->
+                    <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
+                </div>
+
+        
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                </nav>
+            </div>
+
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <!-- Home Farmácia -->
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="building-2" class="w-4 h-4"></i>
+                        <span>Home Farmácia</span>
+                    </a>
+       
+                    <a href="estoque.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                        <i data-lucide="package" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Estoque</span>
+                    </a>
+                    <a href="pedidos-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Pedidos</span>
+                    </a>
+                    <a href="relatorios-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Relatórios</span>
+                    </a>
+                    <a href="configuracoes-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Configurações</span>
+                    </a>
+                </div>
+                <!-- Link de Suporte -->
+                <a href="/paginas/suporte/suporte-farmacia.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL: GESTÃO DE ESTOQUE -->
+        <main class="main-content flex-1 p-4 md:p-8">
+            
+            <header class="text-center mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Gestão de Estoque</h1>
+                <p class="text-sm text-gray-500 mt-1">Controle de Estoque</p>
+            </header>
+            
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- PRODUTO 1-->
+                <article class="product-stock-card bg-white rounded-xl overflow-hidden">
+                    <div class="product-image-placeholder flex items-center justify-center rounded-t-xl">
+                        <i data-lucide="pills" class="w-12 h-12 text-gray-500"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Dipirona 500mg - 20cpr</h3>
+                        <p class="text-sm text-gray-600 mb-2">Genérico • Laboratório X</p>
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <span class="text-success">Em Estoque: 234 unid</span>
+                            <span class="text-gray-700">Validade: 12/2026</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 2 -->
+                <article class="product-stock-card bg-white rounded-xl overflow-hidden">
+                    <div class="product-image-placeholder flex items-center justify-center rounded-t-xl">
+                        <i data-lucide="droplet" class="w-12 h-12 text-gray-500"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Ibuprofeno 10mg/ml - Suspensão</h3>
+                        <p class="text-sm text-gray-600 mb-2">Referência • Laboratório Y</p>
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <span class="text-alert">Estoque Baixo: 12 unid</span>
+                            <span class="text-gray-700">Validade: 04/2025</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 3-->
+                <article class="product-stock-card bg-white rounded-xl overflow-hidden">
+                    <div class="product-image-placeholder flex items-center justify-center rounded-t-xl">
+                        <i data-lucide="sun" class="w-12 h-12 text-gray-500"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Protetor Solar FPS 60 - 200ml</h3>
+                        <p class="text-sm text-gray-600 mb-2">Cosmético • Marca Z</p>
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <span class="text-success">Em Estoque: 88 unid</span>
+                            <span class="text-gray-700">Validade: 08/2027</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 4-->
+                <article class="product-stock-card bg-white rounded-xl overflow-hidden">
+                    <div class="product-image-placeholder flex items-center justify-center rounded-t-xl">
+                        <i data-lucide="flower" class="w-12 h-12 text-gray-500"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Vitamina C 1g - Efervescente</h3>
+                        <p class="text-sm text-gray-600 mb-2">Suplemento • Laboratório A</p>
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <span class="text-alert">Próximo à Validade: 30 unid</span>
+                            <span class="text-red-500 font-bold">Validade: 01/2024</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- PRODUTO 5-->
+                <article class="product-stock-card bg-white rounded-xl overflow-hidden">
+                    <div class="product-image-placeholder flex items-center justify-center rounded-t-xl">
+                        <i data-lucide="flask-conical" class="w-12 h-12 text-gray-500"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Paracetamol 750mg - 10cpr</h3>
+                        <p class="text-sm text-gray-600 mb-2">Similar • Laboratório B</p>
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <span class="text-gray-700">Em Estoque: 65 unid</span>
+                            <span class="text-gray-700">Validade: 06/2026</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- PRODUTO 6-->
+                <article class="product-stock-card bg-white rounded-xl overflow-hidden">
+                    <div class="product-image-placeholder flex items-center justify-center rounded-t-xl">
+                        <i data-lucide="bandage" class="w-12 h-12 text-gray-500"></i>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-1">Curativo Adesivo (Caixa c/ 10)</h3>
+                        <p class="text-sm text-gray-600 mb-2">Convenência • Marca C</p>
+                        <div class="flex justify-between items-center text-sm font-medium">
+                            <span class="text-success">Em Estoque: 150 unid</span>
+                            <span class="text-gray-700">Validade: 05/2028</span>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

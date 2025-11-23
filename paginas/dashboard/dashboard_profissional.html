@@ -1,182 +1,333 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="../assets/css/profissional-styles/globals.css" />
-        <link rel="stylesheet" href="../assets/css/profissional-styles/styleguide.css" />
-        <link rel="stylesheet" href="../assets/css/profissional-styles/style.css" />
-    </head>
-    <body>
-        <div class="profissional">
-            <div class="rectangle"></div>
-            <div class="text-wrapper">Sala de Consulta Virtual</div>
-            <img class="img" src="img/rectangle-44.svg" />
-            <div class="frame"><div class="div">12</div></div>
-            <div class="div-wrapper"><div class="text-wrapper-2">89</div></div>
-            <div class="frame-2"><div class="text-wrapper-3">4.9</div></div>
-            <div class="frame-3"><div class="div">124</div></div>
-            <div class="menu">
-                <div class="menu-item"><div class="icon-jam-icons"></div></div>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Dashboard Profissional</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+     
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #7CC4AB; 
+            --color-alert: #da1e28;
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #3f8829; 
+            --color-pending: #f59e0b; 
+            --color-link-blue: #0f62fe; 
+            --color-agendado: #d1d5db; 
+        }
+
+        /* CLASSIFICADOR DE CORES */
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
+        .bg-pending { background-color: var(--color-pending); }
+        .bg-agendado { background-color: var(--color-agendado); }
+
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-pending { color: var(--color-pending); }
+
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .profile-selection .active-profile {
+            background-color: var(--color-button-blue); 
+            color: white;
+        }
+        
+    
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        .metric-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .status-tab {
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+        }
+        .status-tab.active {
+            border-bottom-color: var(--color-button-blue); 
+            color: var(--color-button-blue);
+        }
+
+        .consult-row {
+            border-bottom: 1px solid var(--color-coolgray-20);
+        }
+
+        .btn-ferramenta-cinza {
+            background-color: var(--color-coolgray-20);
+            color: #4b5563;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 w-20 object-contain" />
+                    <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
+                </a>
+
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                </nav>
             </div>
-            <div class="text-wrapper-4">Painel Administrativo</div>
-            <div class="text-wrapper-5">Ativo</div>
-            <div class="buttons-group">
-                <button class="button">
-                    <img class="icon-jam-icons-2" src="img/user-square.svg" />
-                    <div class="div-2"><div class="button-text">Perfil</div></div>
-                </button>
-            </div>
-            <button class="text-container-wrapper">
-                <div class="text-container"><div class="button-text-2">Suporte</div></div>
-            </button>
-            <button class="text-container-wrapper">
-                <div class="text-container"><div class="button-text-2">Suporte</div></div>
-            </button>
-            <div class="caption">PORTAL MÉDICO</div>
-            <div class="rectangle-2"></div>
-            <div class="rectangle-3"></div>
-            <div class="rectangle-4"></div>
-            <div class="rectangle-5"></div>
-            <div class="group">
-                <img class="rectangle-6" src="img/rectangle-17-4.svg" />
-                <div class="rectangle-7"></div>
-                <div class="rectangle-8"></div>
-                <div class="rectangle-9"></div>
-                <div class="rectangle-10"></div>
-                <div class="text-wrapper-6">Fila de Consultas</div>
-                <div class="rectangle-11"></div>
-                <div class="text-wrapper-7">Aguardando</div>
-                <div class="text-wrapper-8">Em Andamento</div>
-                <div class="text-wrapper-9">Agendado</div>
-                <div class="text-wrapper-10">Agendado</div>
-                <div class="text-wrapper-11">Aguardando</div>
-                <p class="element-nome">
-                    <span class="span">14:30&nbsp;&nbsp;</span> <span class="text-wrapper-12">Nome</span>
-                </p>
-                <p class="p"><span class="span">15:00&nbsp;&nbsp;</span> <span class="text-wrapper-12">Nome</span></p>
-                <p class="element-nome-2">
-                    <span class="span">15:30&nbsp;&nbsp;</span> <span class="text-wrapper-12">Nome</span>
-                </p>
-                <p class="element-nome-3">
-                    <span class="span">16:00&nbsp;&nbsp;</span> <span class="text-wrapper-12">Nome</span>
-                </p>
-                <p class="element-nome-4">
-                    <span class="span">16:30&nbsp;&nbsp;</span> <span class="text-wrapper-12">Nome</span>
-                </p>
-                <button class="button-2">
-                    <div class="button-text-wrapper"><div class="button-text-3">Agendadas</div></div>
-                </button>
-                <button class="button-3">
-                    <div class="text-container-2"><div class="button-text-4">Finalizadas</div></div>
-                </button>
-                <button class="button-4">
-                    <div class="text-container-3"><div class="button-text-4">Em Andamento</div></div>
-                </button>
-            </div>
-            <div class="group-2">
-                <img class="rectangle-12" src="img/rectangle-17.svg" />
-                <div class="text-wrapper-13">Prescrição Rápida</div>
-            </div>
-            <div class="group-3">
-                <img class="rectangle-12" src="img/rectangle-17-2.svg" />
-                <div class="text-wrapper-14">Agenda do Dia</div>
-            </div>
-            <div class="group-4">
-                <img class="rectangle-12" src="img/rectangle-17-3.svg" />
-                <div class="hist-rico-alergias">Histórico:<br /><br />Alergias: <br /><br />Última Consulta:</div>
-                <div class="text-wrapper-15">Informações do Paciente</div>
-                <div class="placeholder-picture"></div>
-                <div class="nome-do-paciente">Nome do Paciente<br />Idade</div>
-            </div>
-            <div class="ellipse"></div>
-            <button class="button-5">
-                <div class="text-container-4"><div class="button-text-3">Iniciar</div></div>
-            </button>
-            <button class="button-6">
-                <div class="text-container-5"><div class="button-text-3">Continuar</div></div>
-            </button>
-            <button class="button-7">
-                <div class="text-container-4"><div class="button-text-3">Iniciar</div></div>
-            </button>
-            <div class="frame-4"><div class="text-wrapper-16">Consultas Hoje</div></div>
-            <div class="frame-5"><div class="text-wrapper-16">Pacientes Ativos</div></div>
-            <div class="frame-6"><div class="text-wrapper-16">Receitas Emitidas</div></div>
-            <div class="frame-7"><div class="text-wrapper-16">Avaliação</div></div>
-            <div class="group-5">
-                <img class="rectangle-13" src="img/image.svg" />
-                <div class="text-wrapper-17">Ferramentas</div>
-                <button class="button-8">
-                    <div class="text-container-6"><div class="button-text-5">Prescrever Receita</div></div>
-                </button>
-                <button class="button-9">
-                    <div class="text-container-6"><div class="button-text-5">Adicionar Receita</div></div>
-                </button>
-                <button class="button-10">
-                    <div class="text-container-6"><div class="button-text-6">Solicitar Exames</div></div>
-                </button>
-                <button class="button-11">
-                    <div class="text-container-6"><div class="button-text-6">Ver Histórico</div></div>
-                </button>
-                <button class="button-12">
-                    <div class="text-container-6"><div class="button-text-6">Agendar Retorno</div></div>
-                </button>
-            </div>
-            <div class="rectangle-14"></div>
-            <div class="rectangle-15"></div>
-            <button class="button-13">
-                <div class="text-container-7"><div class="button-text-5">Compartilhar Tela</div></div>
-            </button>
-            <button class="button-14">
-                <div class="text-container-6"><div class="button-text-5">Prescrever</div></div>
-            </button>
-            <div class="ellipse-2"></div>
-            <p class="element-maria-silva">
-                <span class="text-wrapper-18"
-                    >14:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maria Silva<br /><br />15:30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    João Santos<br /><br />16:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ana Costa<br /><br />17:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </span>
-                <span class="text-wrapper-19">Livre</span>
-            </p>
-            <div class="rascunho">
-                <div class="center">
-                    <div class="logo">
-                        <div class="div-2"><img class="icon-jam-icons" src="img/rectangle-14-stroke.svg" /></div>
-                        <div class="text"><div class="webby-frames">ClickFarma Logo</div></div>
-                    </div>
-                    <img class="rectangle-16" src="img/rectangle-2.svg" />
-                    <div class="frame-8">
-                        <div class="text-container-8"><div class="text-wrapper-20">Público</div></div>
-                    </div>
-                    <div class="frame-9">
-                        <div class="text-container-9"><div class="text-wrapper-21">Consumidor</div></div>
-                    </div>
-                    <div class="frame-10">
-                        <div class="text-container-10"><div class="text-wrapper-22">Fármacia</div></div>
-                    </div>
-                    <div class="frame-11">
-                        <div class="text-container-10"><div class="text-wrapper-23">Profissional</div></div>
-                    </div>
-                    <div class="frame-12">
-                        <div class="text-container-10"><div class="text-wrapper-22">Entregador</div></div>
-                    </div>
+
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                   
+                    <a href="dashboard_profissional.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                        <i data-lucide="stethoscope" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Home Profissional</span>
+                    </a>
+                    <a href="/paginas/profissional/pacientes.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Pacientes</span>
+                    </a>
+                    <a href="/paginas/profissional/consultas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Consultas</span>
+                    </a>
+                    <a href="/paginas/profissional/prescricoes.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Prescrições</span>
+                    </a>
                 </div>
-                <div class="menu-2">
-                    <div class="left">
-                        <div class="menu-item-2">
-                            <img class="icon-jam-icons" src="img/home.svg" />
-                            <div class="home-f-rmacia">Home Profissional</div>
+                <!-- Link de Suporte -->
+                <a href="/paginas/suporte/suporte-profissional.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content flex-1 p-4 md:p-8">
+            
+            <!-- Linha de Status e Perfil -->
+            <section class="flex justify-between items-center mb-6 border-b border-gray-200 pb-4">
+                <div class="flex items-center gap-4">
+                    <h1 class="text-1xl font-bold text-gray-800">PORTAL FARMACEUTICO</h1>
+                    <span class="text-sm text-gray-600 font-medium">Suporte</span>
+                    <span class="flex items-center gap-1 text-sm text-green-600 font-medium">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span> Ativo
+                    </span>
+                    <span class="text-sm text-gray-600 font-medium hidden sm:inline">Painel Administrativo</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-700 font-medium">
+                    <i data-lucide="user-circle" class="w-5 h-5"></i>
+                    <span>Perfil</span>
+                </div>
+            </section>
+
+            <!-- MÉTRICAS DE DESEMPENHO (4 Cards) -->
+            <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                
+                <!-- Card 1: Consultas Hoje (Branco) -->
+                <div class="metric-card bg-white p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-gray-800 mb-1">12</p>
+                    <p class="text-sm font-medium text-gray-600">Consultas Hoje</p>
+                </div>
+
+                <!-- Card 2: Pacientes Ativos (Cinza Claro) -->
+                <div class="metric-card bg-coolgray-10 p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-gray-800 mb-1">124</p>
+                    <p class="text-sm font-medium text-gray-600">Pacientes Ativos</p>
+                </div>
+
+                <!-- Card 3: Receitas Emitidas (Branco) -->
+                <div class="metric-card bg-white p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-pending mb-1">89</p>
+                    <p class="text-sm font-medium text-gray-600">Receitas Emitidas</p>
+                </div>
+
+                <!-- Card 4: Avaliação (Cinza Claro) -->
+                <div class="metric-card bg-coolgray-10 p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-success mb-1">4.9</p>
+                    <p class="text-sm font-medium text-gray-600">Avaliação</p>
+                </div>
+            </section>
+
+            <!-- FILA DE CONSULTAS E INFORMAÇÕES DO PACIENTE (2 COLUNAS) -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                
+                <!-- Coluna 1/3: Fila de Consultas -->
+                <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Fila de Consultas</h2>
+
+                    <!-- Abas de Status -->
+                    <div class="flex border-b border-gray-300 mb-4">
+                        <button class="status-tab active px-4 py-2 text-sm">Agendadas</button>
+                        <button class="status-tab px-4 py-2 text-sm text-gray-600 hover:text-gray-800">Finalizadas</button>
+                        <button class="status-tab px-4 py-2 text-sm text-gray-600 hover:text-gray-800">Em Andamento</button>
+                    </div>
+
+                    <div class="space-y-1">
+                        <!-- Linhas de Consulta (5x) -->
+                        <div class="consult-row flex justify-between items-center py-2 px-2 hover:bg-coolgray-10 rounded-md">
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold text-gray-700 w-12">14:30</span>
+                                <span class="text-sm text-gray-600 w-24">Nome</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-blue-500 font-medium hidden sm:inline">Aguardando</span>
+                                <button class="bg-button-blue-custom text-white text-sm font-medium px-4 py-1 rounded-lg hover:bg-opacity-90 transition">Iniciar</button>
+                            </div>
                         </div>
-                        <div class="menu-item-3"><div class="text-wrapper-24">Pacientes</div></div>
-                        <div class="pedidos-wrapper"><div class="pedidos">Consultas</div></div>
-                        <div class="relat-rios-wrapper"><div class="relat-rios">Prescrições</div></div>
-                    </div>
-                    <div class="menu-item">
-                        <div class="icon-jam-icons-3"></div>
-                        <div class="text-wrapper-25">Suporte</div>
+
+                        <div class="consult-row flex justify-between items-center py-2 px-2 bg-yellow-50">
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold text-gray-700 w-12">15:00</span>
+                                <span class="text-sm text-gray-600 w-24">Nome</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-yellow-600 font-medium hidden sm:inline">Em Andamento</span>
+                                <button class="bg-pending text-white text-sm font-medium px-4 py-1 rounded-lg hover:bg-opacity-90 transition">Continuar</button>
+                            </div>
+                        </div>
+
+                        <div class="consult-row flex justify-between items-center py-2 px-2 hover:bg-coolgray-10 rounded-md">
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold text-gray-700 w-12">15:30</span>
+                                <span class="text-sm text-gray-600 w-24">Nome</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-blue-500 font-medium hidden sm:inline">Aguardando</span>
+                                <button class="bg-button-blue-custom text-white text-sm font-medium px-4 py-1 rounded-lg hover:bg-opacity-90 transition">Iniciar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="consult-row flex justify-between items-center py-2 px-2 bg-coolgray-10 rounded-md">
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold text-gray-700 w-12">16:00</span>
+                                <span class="text-sm text-gray-600 w-24">Nome</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-gray-400 font-medium hidden sm:inline">Agendado</span>
+                                <button class="bg-agendado text-gray-700 text-sm font-medium px-4 py-1 rounded-lg cursor-default transition">Agendado</button>
+                            </div>
+                        </div>
+
+                        <div class="consult-row flex justify-between items-center py-2 px-2 bg-coolgray-10 rounded-md">
+                            <div class="flex items-center gap-4">
+                                <span class="text-sm font-semibold text-gray-700 w-12">16:30</span>
+                                <span class="text-sm text-gray-600 w-24">Nome</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <span class="text-sm text-gray-400 font-medium hidden sm:inline">Agendado</span>
+                                <button class="bg-agendado text-gray-700 text-sm font-medium px-4 py-1 rounded-lg cursor-default transition">Agendado</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </body>
+
+                <!-- Coluna 3/3: Informações do Paciente e Ferramentas -->
+                <div class="space-y-6">
+                    <!-- Informações do Paciente -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Informações do Paciente</h2>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <div class="w-12 h-12 bg-coolgray-20 rounded-full mb-3 flex items-center justify-center text-gray-500">
+                                <i data-lucide="user" class="w-6 h-6"></i>
+                            </div>
+                            <p><span class="font-semibold text-gray-800">Nome do Paciente</span></p>
+                            <p>Código: <span class="font-medium">#CODE</span></p>
+                            <p>Histórico: <span class="font-medium">Última Consulta</span></p>
+                            <p>Alergias: <span class="font-medium">Nenhuma</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Ferramentas -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Ferramentas</h2>
+                        <div class="space-y-3">
+                            <!-- Botão Prescrever Receita (556DBA) -->
+                            <button class="w-full text-center bg-button-blue-custom text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Prescrever Receita</button>
+                            <!-- Botões Cinzas -->
+                            <button class="w-full text-center btn-ferramenta-cinza px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition">Solicitar Exames</button>
+                            <button class="w-full text-center btn-ferramenta-cinza px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition">Ver Histórico</button>
+                            <button class="w-full text-center btn-ferramenta-cinza px-4 py-2 rounded-lg font-medium hover:bg-gray-300 transition">Agendar Retorno</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SALA DE CONSULTA E PRESCRIÇÃO RÁPIDA (2 COLUNAS) -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                
+                <!-- Coluna 1: Sala de Consulta Virtual -->
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Sala de Consulta Virtual</h2>
+                    <div class="flex gap-4 mb-4">
+                        <!-- Placeholder Vídeo 1 -->
+                        <div class="w-1/2 h-40 bg-coolgray-20 rounded-lg flex items-center justify-center text-gray-500">
+                            <i data-lucide="video" class="w-8 h-8"></i>
+                        </div>
+                        <!-- Placeholder Vídeo 2 -->
+                        <div class="w-1/2 h-40 bg-coolgray-20 rounded-lg flex items-center justify-center text-gray-500">
+                            <i data-lucide="video" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    <!-- Controles de Consulta -->
+                    <div class="flex justify-center gap-4">
+                        <button class="bg-button-blue-custom text-white px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Compartilhar Tela</button>
+                        <button class="bg-active-nav-bg text-white px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Prescrever</button>
+                        <span class="w-4 h-4 bg-red-500 rounded-full mt-2 animate-pulse" title="Gravando"></span>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Prescrição Rápida e Agenda -->
+                <div class="space-y-6">
+                    <!-- Prescrição Rápida -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Prescrição Rápida</h2>
+                        <!-- Botão Adicionar Receita (7CC4AB) -->
+                        <button class="w-full text-center bg-active-nav-bg text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Adicionar Receita</button>
+                    </div>
+
+                    <!-- Agenda do Dia -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Agenda do Dia</h2>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between"><span>14:30</span> <span class="font-medium text-gray-800">Maria Silva</span></div>
+                            <div class="flex justify-between"><span>15:30</span> <span class="font-medium text-gray-800">João Santos</span></div>
+                            <div class="flex justify-between"><span>16:00</span> <span class="font-medium text-gray-800">Ana Costa</span></div>
+                            <div class="flex justify-between"><span>17:00</span> <span class="font-medium text-green-500">Livre</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>

@@ -1,125 +1,272 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="../assets/css/entregador-styles/globals.css" />
-        <link rel="stylesheet" href="../assets/css/entregador-styles/styleguide.css" />
-        <link rel="stylesheet" href="../assets/css/entregador-styles/style.css" />
-    </head>
-    <body>
-        <div class="entregador-dashboard">
-            <div class="rectangle"></div>
-            <div class="placeholder-picture"></div>
-            <div class="text-wrapper">Mapa de Rotas</div>
-            <img class="img" src="img/rectangle-44.svg" />
-            <div class="frame"><div class="div">12</div></div>
-            <div class="div-wrapper"><div class="div">4.9</div></div>
-            <div class="frame-2"><div class="text-wrapper-2">29.7Km</div></div>
-            <div class="frame-3"><div class="text-wrapper-3">R$ 124</div></div>
-            <div class="menu">
-                <div class="menu-item"><div class="icon-jam-icons"></div></div>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Dashboard Entregador</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+    
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #7CC4AB; 
+            --color-alert: #da1e28;
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #3f8829; 
+            --color-delivery-path: #f59e0b; 
+            --color-link-blue: #0f62fe; 
+            --color-perfil-entregador: #556DBA; 
+        }
+
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); }
+        .bg-delivery-path { background-color: var(--color-delivery-path); }
+        .bg-success-metric { background-color: var(--color-success); }
+
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-delivery-path { color: var(--color-delivery-path); }
+
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .profile-selection .active-profile {
+            background-color: var(--color-perfil-entregador); 
+            color: white;
+        }
+  
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+ 
+        .metric-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        .delivery-item {
+            border: 1px solid var(--color-coolgray-20);
+            border-radius: 8px;
+            background-color: white;
+        }
+
+        .status-tab-btn {
+            border-bottom: 2px solid transparent;
+            font-weight: 500;
+        }
+        .status-tab-btn.active {
+            border-bottom-color: var(--color-button-blue); 
+            color: var(--color-button-blue);
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: var(--color-coolgray-20);
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full" />
+                      <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
+                </a>
+
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Entregador</a>
+                </nav>
             </div>
-            <div class="text-wrapper-4">Painel Administrativo</div>
-            <div class="text-wrapper-5">Ativo</div>
-            <div class="buttons-group">
-                <button class="button">
-                    <img class="icon-jam-icons-2" src="img/user-square.svg" />
-                    <div class="div-2"><div class="button-text">Perfil</div></div>
-                </button>
-            </div>
-            <div class="caption">FARMA ENTREGA</div>
-            <div class="rectangle-2"></div>
-            <div class="rectangle-3"></div>
-            <div class="rectangle-4"></div>
-            <div class="rectangle-5"></div>
-            <div class="group">
-                <img class="rectangle-6" src="img/rectangle-17-3.svg" />
-                <p class="maria-silva">#E1234 - Maria Silva<br />Rua das Flores, 123</p>
-                <div class="rectangle-7"></div>
-                <div class="text-wrapper-6">Entregas Ativas</div>
-                <div class="frame-4"><div class="text-wrapper-7">A Caminho</div></div>
-                <p class="e-maria-silva">#E1234 - Maria Silva<br />Rua das Flores, 123</p>
-                <button class="text-container-wrapper">
-                    <div class="text-container"><div class="button-text-2">Ativas</div></div>
-                </button>
-                <button class="button-2">
-                    <div class="button-text-wrapper"><div class="button-text-3">Finalizadas</div></div>
-                </button>
-            </div>
-            <div class="frame-5"><div class="text-wrapper-7">A Caminho</div></div>
-            <div class="rectangle-8"></div>
-            <div class="group-2">
-                <img class="rectangle-9" src="img/image.svg" />
-                <div class="text-wrapper-8">Próximas Entregas</div>
-            </div>
-            <div class="group-3">
-                <img class="rectangle-10" src="img/rectangle-17.svg" />
-                <div class="text-wrapper-9">Status do Dia</div>
-            </div>
-            <div class="ellipse"></div>
-            <div class="frame-6"><div class="text-wrapper-10">Entregas Hoje</div></div>
-            <div class="frame-7"><div class="text-wrapper-10">Ganhos Hoje</div></div>
-            <div class="frame-8"><div class="text-wrapper-10">Avaliação</div></div>
-            <div class="frame-9"><div class="text-wrapper-10">Distância Hoje</div></div>
-            <div class="group-4">
-                <img class="rectangle-11" src="img/rectangle-17-2.svg" />
-                <div class="text-wrapper-11">Ações Rápidas</div>
-                <button class="button-3">
-                    <div class="text-container-2"><div class="button-text-4">Iniciar Turno</div></div>
-                </button>
-                <button class="button-4">
-                    <div class="text-container-2"><div class="button-text-5">Pausar Entregas</div></div>
-                </button>
-                <button class="button-5">
-                    <div class="text-container-2"><div class="button-text-5">Reportar Problema</div></div>
-                </button>
-                <button class="button-6">
-                    <div class="text-container-2"><div class="button-text-6">Suporte</div></div>
-                </button>
-            </div>
-            <div class="turno-iniciado-tempo">Turno Iniciado:<br /><br />Tempo Ativo:<br /><br />Pausa Total:</div>
-            <div class="rectangle-12"></div>
-            <div class="rectangle-13"></div>
-            <div class="rascunho">
-                <div class="center">
-                    <div class="logo">
-                        <div class="div-2"><img class="icon-jam-icons" src="img/rectangle-14-stroke.svg" /></div>
-                        <div class="text"><div class="webby-frames">ClickFarma Logo</div></div>
-                    </div>
-                    <img class="rectangle-14" src="img/rectangle-2.svg" />
-                    <div class="frame-10">
-                        <div class="text-container-3"><div class="text-wrapper-12">Público</div></div>
-                    </div>
-                    <div class="frame-11">
-                        <div class="text-container-4"><div class="text-wrapper-13">Consumidor</div></div>
-                    </div>
-                    <div class="frame-12">
-                        <div class="text-container-5"><div class="text-wrapper-14">Fármacia</div></div>
-                    </div>
-                    <div class="frame-13">
-                        <div class="text-container-5"><div class="text-wrapper-14">Profissional</div></div>
-                    </div>
-                    <div class="frame-14">
-                        <div class="text-container-5"><div class="text-wrapper-15">Entregador</div></div>
-                    </div>
+
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <!-- Home Entregador (ATIVO - 7CC4AB) - ÍCONE ALTERADO PARA BIKE -->
+                    <a href="dashboard_entregador.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                        <i data-lucide="motorbike" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Home Entregador</span>
+                    </a>
+                    <a href="/paginas/entregador/rotas_ativas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Rotas Ativas</span>
+                    </a>
+                    <a href="/paginas/entregador/historicos.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Histórico</span>
+                    </a>
+                    <a href="/paginas/entregador/ganhos.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <span>Ganhos</span>
+                    </a>
                 </div>
-                <div class="menu-2">
-                    <div class="left">
-                        <div class="menu-item-2">
-                            <img class="icon-jam-icons" src="img/home.svg" />
-                            <div class="home-f-rmacia">Home Entregador</div>
+                <!-- Link de Suporte -->
+                <a href="../suporte/suporte-entregador.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content flex-1 p-4 md:p-8">
+            
+            <!-- Linha de Status e Perfil -->
+            <section class="flex justify-between items-center mb-6 border-b border-gray-200 pb-4">
+                <div class="flex items-center gap-4">
+                    <h1 class="text-2xl font-bold text-gray-800">FARMA ENTREGA</h1>
+                    <span class="flex items-center gap-1 text-sm text-green-600 font-medium">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span> Ativo
+                    </span>
+                    <span class="text-sm text-gray-600 font-medium hidden sm:inline">Painel Administrativo</span>
+                </div>
+                <div class="flex items-center gap-2 text-gray-700 font-medium">
+                    <i data-lucide="user-circle" class="w-5 h-5"></i>
+                    <span>Perfil</span>
+                </div>
+            </section>
+
+            <!-- MÉTRICAS DE DESEMPENHO (4 Cards) -->
+            <section class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                
+                <!-- Card 1: Entregas Hoje (Branco) -->
+                <div class="metric-card bg-white p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-gray-800 mb-1">12</p>
+                    <p class="text-sm font-medium text-gray-600">Entregas Hoje</p>
+                </div>
+
+                <!-- Card 2: Ganhos Hoje (Cinza Claro) -->
+                <div class="metric-card bg-coolgray-10 p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-gray-800 mb-1">R$ 124</p>
+                    <p class="text-sm font-medium text-gray-600">Ganhos Hoje</p>
+                </div>
+
+                <!-- Card 3: Avaliação (Branco) -->
+                <div class="metric-card bg-white p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-gray-800 mb-1">4.9</p>
+                    <p class="text-sm font-medium text-gray-600">Avaliação</p>
+                </div>
+
+                <!-- Card 4: Distância Hoje (Cinza Claro) -->
+                <div class="metric-card bg-coolgray-10 p-5 rounded-xl text-center">
+                    <p class="text-4xl font-bold text-gray-800 mb-1">29.7<span class="text-xl">Km</span></p>
+                    <p class="text-sm font-medium text-gray-600">Distância Hoje</p>
+                </div>
+            </section>
+
+            <!-- ROTAS ATIVAS, AÇÕES E STATUS (2 COLUNAS) -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                
+                <!-- Coluna 1/3: Entregas Ativas e Mapa -->
+                <div class="lg:col-span-2 space-y-6">
+                    
+                    <!-- Entregas Ativas -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Entregas Ativas</h2>
+
+                        <!-- Abas de Status -->
+                        <div class="flex border-b border-gray-300 mb-4">
+                            <button class="status-tab-btn active px-4 py-2 text-sm">Ativas</button>
+                            <button class="status-tab-btn px-4 py-2 text-sm text-gray-600 hover:text-gray-800">Finalizadas</button>
                         </div>
-                        <div class="pacientes-wrapper"><div class="text-wrapper-16">Rotas Ativas</div></div>
-                        <div class="pedidos-wrapper"><div class="pedidos">Histórico</div></div>
-                        <div class="relat-rios-wrapper"><div class="text-wrapper-16">Ganhos</div></div>
+
+                        <!-- Itens de Entrega -->
+                        <div class="space-y-4">
+                            <!-- Item 1 -->
+                            <div class="delivery-item p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-sm font-semibold text-text-dark">#E1234 - Maria Silva</span>
+                                    <span class="bg-delivery-path text-white text-xs font-semibold px-2 py-0.5 rounded">A Caminho</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-1">Rua das Flores, 123</p>
+                                <button class="text-sm text-button-blue-custom hover:underline font-medium">Ver Detalhes</button>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="delivery-item p-4">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-sm font-semibold text-text-dark">#E1234 - Maria Silva</span>
+                                    <span class="bg-delivery-path text-white text-xs font-semibold px-2 py-0.5 rounded">A Caminho</span>
+                                </div>
+                                <p class="text-sm text-gray-600 mb-1">Rua das Flores, 123</p>
+                                <button class="text-sm text-button-blue-custom hover:underline font-medium">Ver Detalhes</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="menu-item">
-                        <div class="icon-jam-icons-3"></div>
-                        <div class="text-wrapper-17">Suporte</div>
+
+                    <!-- Mapa de Rotas -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Mapa de Rotas</h2>
+                        <div class="map-placeholder rounded-lg flex items-center justify-center">
+                        <img src="/assets/img/mapa.png" alt="Mapa de rotas de entrega" class="w-full h-full object-cover rounded-lg" />
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </body>
+
+                <!-- Coluna 3/3: Ações Rápidas e Status do Dia -->
+                <div class="space-y-6">
+                    <!-- Ações Rápidas -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Ações Rápidas</h2>
+                        <div class="space-y-3">
+                            <!-- Iniciar Turno (556DBA) -->
+                            <button class="w-full text-center bg-button-blue-custom text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Iniciar Turno</button>
+                            <!-- Pausar Entregas (Cinza) -->
+                            <button class="w-full text-center bg-gray-400 text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Pausar Entregas</button>
+                            <!-- Reportar Problema (Cinza) -->
+                            <button class="w-full text-center bg-gray-400 text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Reportar Problema</button>
+                            <!-- Suporte (7CC4AB) -->
+                            <button class="w-full text-center bg-active-nav-bg text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">Suporte</button>
+                        </div>
+                    </div>
+
+                    <!-- Próximas Entregas -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Próximas Entregas</h2>
+                        <div class="space-y-3 text-sm">
+                            <div class="h-8 bg-coolgray-10 rounded-lg"></div>
+                            <div class="h-8 bg-coolgray-10 rounded-lg"></div>
+                        </div>
+                    </div>
+
+                    <!-- Status do Dia -->
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Status do Dia</h2>
+                        <div class="space-y-2 text-sm text-gray-700">
+                            <div class="flex justify-between"><span>Turno Iniciado:</span> <span class="font-medium">--</span></div>
+                            <div class="flex justify-between"><span>Tempo Ativo:</span> <span class="font-medium">--</span></div>
+                            <div class="flex justify-between"><span>Pausa Total:</span> <span class="font-medium">--</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Script para inicializar os ícones Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
