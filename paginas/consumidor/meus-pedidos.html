@@ -68,20 +68,18 @@
        
         <header class="header-rascunho bg-white border-b border-coolgray-20 shadow-sm">
             <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
-                
-                <div class="logo flex items-center gap-2">
-                    <i class="w-6 h-6 text-gray-700"></i>
-                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 w-20 object-contain" />
                     <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
-                </div>
+                </a>
 
-                <!-- seleção de perfil -->
-                <nav class="profile-selection flex-wrap hidden lg:flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
                     <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
-                    <a href="../dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Consumidor</a>
-                    <a href="../dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
-                    <a href="../dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
-                    <a href="../dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
                 </nav>
             </div>
 
@@ -110,7 +108,7 @@
                     </a>
                     <a href="minhas-receitas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
                         <i data-lucide="pill-bottle" class="w-4 h-4"></i>
-                        <span>Receitas</span>
+                        <span>Minhas Receitas</span>
                     </a>
                 </div>
                 <!-- link de suporte -->
@@ -133,7 +131,9 @@
                
                 <div class="search-and-button flex items-center gap-2 w-full md:flex-grow">
                     <div class="field flex items-center w-full h-12 gap-2 p-3 bg-coolgray-10 rounded-xl border border-gray-300">
-                        <h1 style="font-size: large;">Filtrar</h1><i data-lucide="filter" class="w-4 h-4 text-gray-500"></i>
+                        <h1 style="font-size: large;">Filtrar</h1>
+                        <div style="margin-left: 1110px;">
+                        <i data-lucide="filter" class="w-4 h-4 text-gray-500 float"></i></div>
                     </div>
                 </div>
             </section>
@@ -152,7 +152,7 @@
                     </div>
                     <p class="order-status text-right flex flex-col gap-1">
                         <span class="font-medium text-base text-text-dark">R$ 45,90</span> 
-                        <span class="text-xs font-semibold text-text-status" style="color:#076910">Entregue</span>
+                        <span class="text-xs font-semibold text-text-status" style="color:#b3940c">A caminho</span>
                     </p>
                 </article>
 
@@ -181,7 +181,7 @@
                     </div>
                     <p class="order-status text-right flex flex-col gap-1">
                         <span class="font-medium text-base text-text-dark">R$ 45,90</span> 
-                        <span class="text-xs font-semibold text-text-status" style="color:#076910">Entregue</span>
+                        <span class="text-xs font-semibold text-text-status" style="color:#970505">Cancelado</span>
                     </p>
                 </article>
             </section>
@@ -204,7 +204,7 @@
 
                     <article class="product-card flex flex-col border border-gray-400 rounded-lg bg-white p-4 shadow-md">
                         <div class="placeholder-picture-10 bg-coolgray-20 rounded-lg w-full h-32 mb-4 flex items-center justify-center">
-                            <i data-lucide="syringes" class="w-12 h-12 text-gray-500"></i>
+                            <i data-lucide="syringe" class="w-12 h-12 text-gray-500"></i>
                         </div>
                         <p class="text-gray-900 font-medium mb-2">Detalhes do Produto 2</p>
                         <button class="button-3 add-to-cart-button w-full h-10 bg-button-blue rounded-lg border-2 border-button-blue text-white font-medium text-sm hover:opacity-90 transition duration-150">
@@ -214,7 +214,7 @@
 
                     <article class="product-card flex flex-col border border-gray-400 rounded-lg bg-white p-4 shadow-md">
                         <div class="placeholder-picture-9 bg-coolgray-20 rounded-lg w-full h-32 mb-4 flex items-center justify-center">
-                            <i data-lucide="bottle" class="w-12 h-12 text-gray-500"></i>
+                            <i data-lucide="pill-bottle" class="w-12 h-12 text-gray-500"></i>
                         </div>
                         <p class="text-gray-900 font-medium mb-2">Detalhes do Produto 3</p>
                         <button class="button-4 add-to-cart-button w-full h-10 bg-button-blue rounded-lg border-2 border-button-blue text-white font-medium text-sm hover:opacity-90 transition duration-150">

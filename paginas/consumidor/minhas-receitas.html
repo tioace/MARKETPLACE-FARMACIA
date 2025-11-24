@@ -67,18 +67,18 @@
         
         <!-- HEADER FIXO (RASCUNHO / Seleção de Perfil) --><header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
             <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
-                <!-- Logo --><div class="logo flex items-center gap-2">
-                    <i class="w-6 h-6 text-gray-700"></i>
-                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 w-20 object-contain" />
                     <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
-                </div>
+                </a>
 
-                <!-- Seleção de Perfil --><nav class="profile-selection flex-wrap hidden lg:flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
                     <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
-                    <a href="../dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Consumidor</a>
-                    <a href="../dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
-                    <a href="../dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
-                    <a href="../dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
                 </nav>
             </div>
 
@@ -107,7 +107,7 @@
                     </a>
                     <a href="minhas-receitas.html" class="nav-item active-nav-item flex items-center gap-2 p-2 rounded-lg text-sm font-medium">
                         <i data-lucide="pill-bottle" class="w-4 h-4 text-white"></i>
-                        <span class="text-white">Receitas</span>
+                        <span class="text-white">Minhas Receitas</span>
                     </a>
                 </div>
                 <a href="../suporte/suporte-consumidor.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
@@ -124,57 +124,82 @@
             <section class="farmacias-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <article class="farmacia-card bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                    <div class="placeholder-picture bg-coolgray-20 w-full h-40 flex items-center justify-center text-gray-500"><img style="width: 900px; height: 160px;" src="../../assets/img/PlaceHolder.jpg">
-                    </div>
+                    <div class="placeholder-picture-9 bg-coolgray-20 rounded-lg w-full h-40 mb-4 flex items-center justify-center">
+                            <i data-lucide="pill" class="w-12 h-12 text-gray-500"></i>
+                        </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Prescrição 1</h3>
-                        <p class="text-sm text-gray-600">Descrição 1...</p>
+                        <p class="text-gray-600 mb-2">Medicamento: Amoxicilina 500mg</p>
+                        <div class="flex justify-between flex-col items-start text-sm font-medium">
+                            <span  style="color:#076910">STATUS: VÁLIDA
+                            </span>
+                            <span class="text-gray-700">Emitida por: Dr. Carlos Albuquerque</span>
+                        </div>
                     </div>
                 </article>
 
                <article class="farmacia-card bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                    <div class="placeholder-picture bg-coolgray-20 w-full h-40 flex items-center justify-center text-gray-500"><img style="width: 900px; height: 160px;" src="../../assets/img/PlaceHolder.jpg">
-                    </div>
+                    <div class="placeholder-picture-9 bg-coolgray-20 rounded-lg w-full h-40 mb-4 flex items-center justify-center">
+                            <i data-lucide="tablets" class="w-12 h-12 text-gray-500"></i>
+                        </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Prescrição 2</h3>
-                        <p class="text-sm text-gray-600">Descrição 2...</p>
-                    </div>
+                        <p class="text-gray-600 mb-2">Medicamento: Glifage 500mg</p>
+                        <div class="flex justify-between flex-col items-start text-sm font-medium">
+                            <span  style="color:#970505">STATUS: EXPIRADA
+                            </span>
+                            <span class="text-gray-700">Emitida por: Dra. Jéssica Moreira</span>
+                        </div>
                 </article>
 
                 <article class="farmacia-card bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                    <div class="placeholder-picture bg-coolgray-20 w-full h-40 flex items-center justify-center text-gray-500"><img style="width: 900px; height: 160px;" src="../../assets/img/PlaceHolder.jpg">
-                    </div>
+                    <div class="placeholder-picture-9 bg-coolgray-20 rounded-lg w-full h-40 mb-4 flex items-center justify-center">
+                            <i data-lucide="pill-bottle" class="w-12 h-12 text-gray-500"></i>
+                        </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Prescrição 3</h3>
-                        <p class="text-sm text-gray-600">Descrição 3...</p>
-                    </div>
+                        <p class="text-gray-600 mb-2">Medicamento: Stavigile 100mg</p>
+                        <div class="flex justify-between flex-col items-start text-sm font-medium">
+                            <span  style="color:#b3940c">STATUS: PERTO DA DATA DE EXPIRAÇÃO 
+                            </span>
+                            <span class="text-gray-700">Emitida por: Dra. Marina Costas</span>
+                        </div>
                 </article>
 
               <article class="farmacia-card bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                    <div class="placeholder-picture bg-coolgray-20 w-full h-40 flex items-center justify-center text-gray-500"><img style="width: 400px; height: 160px;" src="../../assets/img/PlaceHolder.jpg">
-                    </div>
+                    <div class="placeholder-picture-9 bg-coolgray-20 rounded-lg w-full h-40 mb-4 flex items-center justify-center">
+                            <i data-lucide="syringe" class="w-12 h-12 text-gray-500"></i>
+                        </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Prescrição 4</h3>
-                        <p class="text-sm text-gray-600">Descrição 4...</p>
-                    </div>
+                        <p class="text-gray-600 mb-2">Medicamento: Insulina NPH</p>
+                        <div class="flex justify-between flex-col items-start text-sm font-medium">
+                            <span  style="color:#b3940c">STATUS: PERTO DA DATA DE EXPIRAÇÃO
+                            </span>
+                            <span class="text-gray-700">Emitida por: Dr. Júlio Martins</span>
+                        </div>
                 </article>
 
                 <article class="farmacia-card bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                    <div class="placeholder-picture bg-coolgray-20 w-full h-40 flex items-center justify-center text-gray-500"><img style="width: 400px; height: 160px;" src="../../assets/img/PlaceHolder.jpg">
-                    </div>
+                    <div class="placeholder-picture-9 bg-coolgray-20 rounded-lg w-full h-40 mb-4 flex items-center justify-center">
+                            <i data-lucide="cylinder" class="w-12 h-12 text-gray-500"></i>
+                        </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Prescrição 5</h3>
-                        <p class="text-sm text-gray-600">Descrição 5...</p>
-                    </div>
+                        <p class="text-gray-600 mb-2">Medicamento: Pomada Dermatológica</p>
+                        <div class="flex justify-between flex-col items-start text-sm font-medium">
+                            <span  style="color:#076910">STATUS: VÁLIDA
+                            </span>
+                            <span class="text-gray-700">Emitida por: Dr. Gustavo Rodriguês</span>
+                        </div>
                 </article>
 
                 <article class="farmacia-card bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden">
-                    <div class="placeholder-picture bg-coolgray-20 w-full h-40 flex items-center justify-center text-gray-500"><img style="width: 400px; height: 160px;" src="../../assets/img/PlaceHolder.jpg">
-                    </div>
+                    <div class="placeholder-picture-9 bg-coolgray-20 rounded-lg w-full h-40 mb-4 flex items-center justify-center">
+                            <i data-lucide="briefcase-medical" class="w-12 h-12 text-gray-500"></i>
+                        </div>
                     <div class="p-4">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-1">Prescrição 6</h3>
-                        <p class="text-sm text-gray-600">Descrição 6...</p>
-                    </div>
+                        <p class="text-gray-600 mb-2">Medicamento: Clonazepam 2mg</p>
+                        <div class="flex justify-between flex-col items-start text-sm font-medium">
+                            <span  style="color:#970505">STATUS: EXPIRADA
+                            </span>
+                            <span class="text-gray-700">Emitida por: Dra. Alícia Machado</span>
+                        </div>
                 </article>
 
             </section>

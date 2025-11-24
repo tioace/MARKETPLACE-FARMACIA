@@ -12,7 +12,7 @@
         :root {
             --color-primary-90: #001d6c; 
             --color-button-blue: #556DBA; 
-            --color-active-nav-bg: #7CC4AB; 
+            --color-active-nav-bg: #556dba; 
             --color-coolgray-10: #f2f4f8; 
             --color-coolgray-20: #dde1e6; 
             --color-success: #3f8829; 
@@ -84,20 +84,16 @@
         
        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
             <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
-                
-                <div class="logo flex items-center gap-2">
-                    <i class="w-6 h-6 text-gray-700"></i>
-                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
-                    <!--incluir botao de volta p pag inicial-->
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 w-20 object-contain" />
                     <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
-                </div>
+                </a>
 
-
-                <!-- Seleção de Perfil (Farmácia Ativo - 556DBA) -->
                 <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
-                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
                     <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
-                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link active-profile text-white bg-button-blue-custom rounded shadow-md px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Farmácia</a>
                     <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
                     <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
                 </nav>
@@ -113,14 +109,17 @@
                     </a>
                     <!-- Estoque -->
                     <a href="estoque.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="archive" class="w-4 h-4"></i>
                         <span>Estoque</span>
                     </a>
                     <!-- Pedidos -->
                     <a href="pedidos-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="package" class="w-4 h-4"></i>
                         <span>Pedidos</span>
                     </a>
                     <!-- Relatórios -->
                     <a href="relatorios-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
                         <span>Relatórios</span>
                     </a>
                     <!-- Configurações (ATIVO - 7CC4AB) -->

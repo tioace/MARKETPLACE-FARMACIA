@@ -95,20 +95,16 @@
     <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
         
        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
-            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
-                
-                <div class="logo flex items-center gap-2">
-                    <i class="w-6 h-6 text-gray-700"></i>
-                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
-                    <!--incluir botao de volta p pag inicial-->
+           <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 w-20 object-contain" />
                     <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
-                </div>
+                </a>
 
-
-                <!-- Seleção de Perfil (Consumidor Ativo - 556DBA) -->
                 <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
-                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
-                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue-custom rounded shadow-md px-3 py-1">Consumidor</a>
+                    <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Consumidor</a>
                     <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
                     <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
                     <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Entregador</a>
@@ -226,9 +222,11 @@
                     </div>
 
                     <!-- Botão Voltar (Verde/Teal) -->
+                    <a href="../consumidor/carrinho.html">
                     <button class="w-full bg-active-nav-bg text-white px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition">
                         Voltar
                     </button>
+                    </a>
                 </div>
 
                 <!-- Coluna Direita: Método de Pagamento e Endereço -->
@@ -288,8 +286,8 @@
             
             <!-- Botão Finalizar Compra -->
             <div class="flex justify-center mt-10">
-                <a href="confirmacao.html" button class="w-full lg:w-1/2 bg-button-blue-custom text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition shadow-xl">
-                    FINALIZAR COMPRA
+                <a href="confirmacao.html" button class="w-full lg:w-1/2 bg-button-blue-custom text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition shadow-xl" style="margin-left: 50px;">
+                    <p style="margin-left: 190px;">FINALIZAR COMPRA</p>
                 </a>
             </div>
         </main>

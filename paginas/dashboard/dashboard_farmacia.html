@@ -76,15 +76,14 @@
         
        <header class="header-rascunho bg-white border-b border-coolgray-20 shadow-sm">
             <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
-                
-                <div class="logo flex items-center gap-2">
-                    <i class="w-6 h-6 text-gray-700"></i>
-                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full">
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 w-20 object-contain" />
                     <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
-                </div>
-            
+                </a>
+
                 <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
-                    <a href="/index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
                     <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
                     <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Farmácia</a>
                     <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
@@ -95,20 +94,24 @@
             <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
                 <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
                  
-                    <a href="#" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                    <a href="dashboard_farmacia.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
                         <i data-lucide="building-2" class="w-4 h-4 text-white"></i>
                         <span class="text-white">Home Farmácia</span>
                     </a>
                     <a href="../farmacia/estoque.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="archive" class="w-4 h-4"></i>
                         <span>Estoque</span>
                     </a>
                     <a href="../farmacia/pedidos-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="package" class="w-4 h-4"></i>
                         <span>Pedidos</span>
                     </a>
                     <a href="../farmacia/relatorios-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="bar-chart-3" class="w-4 h-4"></i>
                         <span>Relatórios</span>
                     </a>
                     <a href="../farmacia/configuracoes-farmacia.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="settings" class="w-4 h-4"></i>
                         <span>Configurações</span>
                     </a>
                 </div>
