@@ -3,179 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar conta</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="../../assets/css/login.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
     
-    <style>
+    <title>Criar Conta - Entregador</title>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">
+            <img src="../AT01 - MEU SITE/assets/img/logo.png" width="120px" height="120px">  
+            <span>ClickFarm</span>
+        </a>
+        <div class="menu">
+        </div>
         
-        :root {
-            --color-primary-90: #001d6c; 
-            --color-button-blue: #556DBA; 
-            --color-active-nav-bg: #7CC4AB; 
-            --color-alert: #da1e28;
-            --color-coolgray-10: #f2f4f8; 
-            --color-coolgray-20: #dde1e6; 
-            --color-link-blue: #556DBA; 
-        }
+        <nav>
+            <ul>
+                <li><a href="#">Publico</a></li>
+                <li><a href="#">Consumidor</a>
+                <li><a href="#">Farmácia</a>
+                <li><a href="#">Profissional</a></li>
+                <li><a href="#">Entregador</a></li>
+                
+            </ul>
+        </nav>
+    </header>
 
-        
-        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
-        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
-        .bg-primary-90 { background-color: var(--color-primary-90); }
-        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
-        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
-
-        .text-primary-90 { color: var(--color-primary-90); }
-        .text-button-blue { color: var(--color-button-blue); }
-        .text-success { color: var(--color-success); }
-        .text-text-dark { color: var(--color-text-dark); }
-        .text-link-blue { color: var(--color-link-blue); }
-
-        
-         .header-rascunho {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-
-        .top-bar-perfil {
-            justify-content: space-between; 
-            align-items: center;
-            padding: 8px 32px;
-            
-        }
-        
-        .profile-selection .active-profile {
-            background-color: var(--color-link-blue); 
-            color: white;
-        }
-
-
-        .nav-login-active {
-            background-color: var(--color-button-blue) !important; 
-            color: white !important;
-        }
-      
-        .nav-home-active {
-            background-color: var(--color-active-nav-bg); 
-            color: white !important;
-        }
-        
-        .menu-principal .active-nav-item {
-            background-color: var(--color-active-nav-bg); 
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            color: white; 
-        }
-
-        .menu-principal {
-             justify-content: flex-start;
-             padding: 4px 32px;
-        }
-
-
-        .form-field {
-            border: 1px solid #d1d5db; 
-            border-radius: 8px;
-            padding: 12px;
-            width: 100%;
-        }
-
-        .btn-login-action {
-            background-color: var(--color-button-blue); 
-            color: white;
-            font-weight: 500;
-            border-radius: 8px;
-        }
-        .text-create-account {
-            color: var(--color-link-blue);
-            font-weight: 500;
-        }
-        
-        .social-btn {
-            border: 1px solid #d1d5db;
-            color: #4b5563; 
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 500;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        .login-container {
-             display: flex;
-             flex-direction: column;
-             align-items: center;
-             padding-top: 5rem;
-        }
-        .login-logo {
-            width: 6rem;
-            height: 6rem;
-            margin-bottom: 1rem;
-        }
-        .login-title {
-            font-size: 2.25rem;
-            font-weight: 700; 
-            color: #1f2937;
-            margin-bottom: 2rem;
-        }
-
-    </style>
     
-    <title>ClickFarma - Cadastro Consumidor</title>
-<body class="bg-gray-50 font-sans">
-
-    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
-        
-        
-        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
-            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
-                <!-- Logo -->
-                <a href="/index.html" class="logo flex items-center gap-2">
-                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 w-20 object-contain" />
-                    <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
-                </a>
-
-                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
-                    <a href="cad-consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
-                    <a href="cad-farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
-                    <a href="cad-farmaceutico.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
-                    <a href="cad-entregador.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Entregador</a>
-                    <h style="color:#4b5563">|</h>
-                    <div style="margin-left: 5px;">
-                    <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Página Inicial</a></div>
-                </nav>
-            </div>
-        </header>
-            
-
     <section class="container forms">
         <div class="form cad-usu">
             <div class="form-content">
-                <h2 class="text-3xl md:text-4xl font-light text-gray-700 mb-8 rounded text-sm">Cadastro</h2>
+                <h2>Cadastro</h2>
+                <h3>Escolha seu tipo de conta: </h3>
+                <ul>
+                    <li><a href="cad-usuario.html">Consumidor</a></li>
+                    <li><a href="cad-entregador.html">Entregador</a></li>
+                    <li><a href="cad-farmacia.html">Farmacia</a></li>
+                    <li><a href="cad-farmaceutico.html">Farmaceutico</a></li>
+                </ul>
                 <form action="#">
+                    <h4>Dados Pessoais</h4>
                     <div class="field input-field">
-                        <h style="font-size: small; font-weight: light; margin-left: 2px;">Nome Completo*</h>
-                        <input type="text" placeholder="Nome e Sobrenome" class="input">
+                        <input type="text" placeholder="Nome Completo" class="input">
                     </div>
-                    <br>
-                    <div class="field input-field">
-                        <input type="text" placeholder="CPF" class="input">
-                    </div>
-
-
+                    
+                    
                     <div class="field input-field">
                         <input type="email" placeholder="Email" class="input">
+                    </div>
+                    
+                    
+                    <div class="field input-field">
+                        <input type="date" placeholder="Data de Nascimento" class="input">
                     </div>
                     
                     
@@ -187,13 +78,14 @@
                         <input type="tel" placeholder="Telefone" class="input">
                     </div>
                     
-
+                    <h4>Endereço</h4>
+                    
                     <div class="field input-field">
                         <input type="password" placeholder="Senha" class="input"> 
                         <i class='bxr  bx-eye eye-icon'></i> 
                     </div>
 
-
+                    
                     
                     <div class="field entrar-field">
                         <input type="submit" value="CRIAR CONTA">
@@ -206,9 +98,8 @@
     
 
         
-        </div>
+        </div>    
     </section>
-
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
