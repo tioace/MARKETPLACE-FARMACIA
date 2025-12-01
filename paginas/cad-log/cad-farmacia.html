@@ -1,100 +1,402 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Cadastro Farmácia</title>
 
-    <title>Criar conta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="../../assets/css/cadastro/farmarcia.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-alert: #da1e28;
+            --color-success: #3f8829;
+        }
+
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .bg-button-blue { color:#556DBA; }
+
+        body {
+            background-color: var(--color-coolgray-10);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .container-main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: white;
+            border-bottom: 1px solid var(--color-coolgray-20);
+            padding: 16px 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-section img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+
+        .logo-section span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-button-blue);
+        }
+
+        .nav-profile-active {
+            background-color: var(--color-button-blue) !important; 
+            color: white !important;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .form-header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--color-primary-90);
+            margin-bottom: 12px;
+        }
+
+        .form-header p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .account-tabs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .account-tab {
+            padding: 10px;
+            border: 2px solid var(--color-coolgray-20);
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #666;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .account-tab:hover {
+            border-color: var(--color-button-blue);
+            background-color: var(--color-coolgray-10);
+        }
+
+        .account-tab.active {
+            background-color: var(--color-button-blue);
+            color: white;
+            border-color: var(--color-button-blue);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--color-coolgray-20);
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus {
+            outline: none;
+            border-color: var(--color-button-blue);
+            box-shadow: 0 0 0 3px rgba(85, 109, 186, 0.1);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 24px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-group a {
+            color: var(--color-button-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .form-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .btn-submit {
+            padding: 12px;
+            background-color: var(--color-button-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-submit:hover {
+            background-color: #4a5ca3;
+        }
+
+        .login-link {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 16px;
+        }
+
+        .login-link a {
+            color: var(--color-button-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .account-tabs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container-main">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <a href="../../index.html" class="logo-section">
+                    <img src="../../assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" />
+                    <span>ClickFarma</span>
+                </a>
 
-<header>
-    <a href="../index.html" class="logo">
-        <img src="../../assets/img/ClickFarmaLogo.jpg" width="120" height="120">
-        <span>ClickFarm</span>
-    </a>
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="login.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1" style="padding-left: 15px; padding-right: 15px;">Log-in</a>
+                    <h style="color:#4b5563">|</h>
+                    <a href="cad-farmacia.html" class="profile-link nav-profile-active text-white bg-button-blue rounded shadow-md px-3 py-1" style="padding-left: 15px; padding-right: 15px;">Cadastre-se</a>
+                    <h style="color:#4b5563">|</h>
+                    <div style="margin-left: 5px;">
+                    <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1" style="padding-left: 15px; padding-right: 15px;">Página Inicial</a></div>
+                </nav>
+            </div>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="#">Publico</a></li>
-            <li><a href="#">Consumidor</a></li>
-            <li><a href="#">Farmácia</a></li>
-            <li><a href="#">Profissional</a></li>
-            <li><a href="#">Entregador</a></li>
-        </ul>
-    </nav>
-</header>
+        <main>
+            <div class="form-container">
+            
+                <div class="form-header">
+                    <h1>Criar Conta</h1>
+                    <p>Escolha seu tipo de conta</p>
+                </div>
 
-<div class="cadastro-container">
+                <div class="account-tabs">
+                    <a href="cad-usuario.html" class="account-tab">Consumidor</a>
+                    <a href="cad-farmacia.html" class="account-tab active">Farmácia</a>
+                    <a href="cad-farmaceutico.html" class="account-tab">Profissional</a>
+                    <a href="cad-entregador.html" class="account-tab">Entregador</a>
+                </div>
 
-    <h1>Criar conta</h1>
-    <p class="sub">Escolha seu tipo de conta:</p>
+                <form action="#" method="POST">
+                    <!-- Informações da Farmácia -->
+                    <div class="form-group">
+                        <h3 style="font-size: 14px; font-weight: 700; color: #333; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;">Informações da Farmácia</h3>
 
-    <div class="tipo-conta">
-        <a href="cad-usuario.html" class="opcao">Consumidor</a>
-        <a href="cad-farmacia.html" class="opcao active">Farmácia</a>
-        <a href="cad-farmaceutico.html" class="opcao">Profissional</a>
-        <a href="cad-entregador.html" class="opcao">Entregador</a>
+                        <div class="form-row">
+                            <div>
+                                <label>Nome da Farmácia*</label>
+                                <input type="text" placeholder="Nome da sua farmácia" required>
+                            </div>
+                            <div>
+                                <label>CNPJ*</label>
+                                <input type="text" placeholder="00.000.000/0000-00" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Endereço*</label>
+                            <input type="text" placeholder="Rua, número, bairro" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div>
+                                <label>CEP*</label>
+                                <input type="text" placeholder="00000-000" required>
+                            </div>
+                            <div>
+                                <label>Cidade*</label>
+                                <input type="text" placeholder="Sua cidade" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Horário de Funcionamento*</label>
+                            <input type="text" placeholder="Ex: Seg-Sex 08:00-22:00" required>
+                        </div>
+                    </div>
+
+                    <!-- Contato -->
+                    <div class="form-group">
+                        <h3 style="font-size: 14px; font-weight: 700; color: #333; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;">Contato</h3>
+
+                        <div class="form-row">
+                            <div>
+                                <label>Email*</label>
+                                <input type="email" placeholder="seu@email.com" required>
+                            </div>
+                            <div>
+                                <label>Telefone*</label>
+                                <input type="tel" placeholder="(00) 00000-0000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Senha*</label>
+                            <input type="password" placeholder="Crie uma senha segura" required>
+                        </div>
+                    </div>
+
+                    <!-- Termos -->
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" style="margin-bottom: 0; text-transform: none; letter-spacing: normal;">Li e aceito os <a href="#">termos e condições</a></label>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-submit">
+                            <i data-lucide="store" style="width: 16px; height: 16px;"></i>
+                            Cadastrar Farmácia
+                        </button>
+                    </div>
+
+                    <div class="login-link">
+                        Possui uma conta? <a href="login.html">Faça Login</a>
+                    </div>
+                </form>
+            </div>
+        </main>
     </div>
 
-    <form>
-
-        <div class="row-flex">
-            <div class="field input-half">
-                <label>Nome da Farmácia*</label>
-                <input type="text" placeholder="Nome">
-            </div>
-
-            <div class="field input-half">
-                <label>CNPJ*</label>
-                <input type="text" placeholder="CNPJ">
-            </div>
-        </div>
-
-        <div class="row-flex">
-            <div class="field input-half">
-                <label>Endereço*</label>
-                <input type="text" placeholder="Endereço">
-            </div>
-
-            <div class="field input-half">
-                <label>CEP*</label>
-                <input type="text" placeholder="CEP">
-            </div>
-        </div>
-
-        <div class="row-flex">
-            <div class="field input-half">
-                <label>Email*</label>
-                <input type="email" placeholder="Email">
-            </div>
-
-            <div class="field input-half">
-                <label>Telefone*</label>
-                <input type="tel" placeholder="Telefone">
-            </div>
-        </div>
-
-        <div class="field">
-            <label>Horário de Funcionamento*</label>
-            <input type="text" placeholder="Digite o horário">
-        </div>
-
-        <div class="checkbox-field">
-            <input type="checkbox" id="termos">
-            <label for="termos">Li e aceito os termos</label>
-        </div>
-
-        <button class="btn-submit">Cadastrar Farmácia</button>
-
-        <p class="login-link">Possui uma conta? <a href="#">Faça Login</a></p>
-
-    </form>
-</div>
-
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickFarma - Ganhos e Carteira</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        
+        :root {
+            --color-primary-90: #001d6c; 
+            --color-button-blue: #556DBA; 
+            --color-active-nav-bg: #556DBA; 
+            --color-alert: #da1e28; 
+            --color-coolgray-10: #f2f4f8; 
+            --color-coolgray-20: #dde1e6; 
+            --color-success: #3f8829; 
+            --color-link-blue: #0f62fe; 
+            --color-perfil-entregador: #556DBA; 
+        }
+
+        
+        .bg-coolgray-10 { background-color: var(--color-coolgray-10); }
+        .bg-coolgray-20 { background-color: var(--color-coolgray-20); }
+        .bg-button-blue-custom { background-color: var(--color-button-blue); } 
+        .bg-active-nav-bg { background-color: var(--color-active-nav-bg); } 
+
+
+        .text-primary-90 { color: var(--color-primary-90); }
+        .text-button-blue { color: var(--color-button-blue); }
+        .text-success { color: var(--color-success); }
+        .text-alert { color: var(--color-alert); }
+
+        
+        .header-rascunho {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        
+        .profile-selection .active-profile {
+            background-color: var(--color-perfil-entregador); 
+            color: white;
+        }
+        
+        
+        .menu-principal .active-nav-item {
+            background-color: var(--color-active-nav-bg); 
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+
+        
+        .wallet-card {
+            background: linear-gradient(135deg, var(--color-button-blue) 0%, #4a62a0 100%);
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+        }
+
+        
+        .metric-ganhos-card {
+            border: 1px solid var(--color-coolgray-20);
+            background-color: white;
+        }
+        
+        .transaction-item {
+            border-bottom: 1px solid var(--color-coolgray-20);
+        }
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Estilos para os métodos de saque */
+        .metodo-pagamento-btn {
+            background-color: white;
+            color: var(--color-button-blue);
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .metodo-pagamento-btn:hover {
+            border-color: var(--color-button-blue);
+            background-color: #f5f5f5;
+        }
+
+        .metodo-pagamento-btn.active {
+            background-color: var(--color-button-blue);
+            color: white;
+            border-color: var(--color-button-blue);
+        }
+
+        /* Estilos para o gráfico */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin-top: 20px;
+        }
+
+        /* Botões de ação */
+        .button-action {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .button-voltar {
+            background-color: #dde1e6;
+            color: #333;
+        }
+
+        .button-voltar:hover {
+            background-color: #c5c9d1;
+        }
+
+        .button-confirmar {
+            background-color: var(--color-button-blue);
+            color: white;
+        }
+
+        .button-confirmar:hover {
+            background-color: #4a5ca3;
+        }
+
+        /* Estilos para seleção de valor */
+        .valor-saque-container {
+            background-color: var(--color-coolgray-10);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .valor-input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .valor-preset-btn {
+            background-color: white;
+            border: 2px solid #ddd;
+            color: var(--color-button-blue);
+            padding: 10px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .valor-preset-btn:hover {
+            border-color: var(--color-button-blue);
+            background-color: #f5f5f5;
+        }
+
+        .valor-preset-btn.active {
+            background-color: var(--color-button-blue);
+            color: white;
+            border-color: var(--color-button-blue);
+        }
+
+        .valor-custom-input {
+            padding: 10px 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            width: 150px;
+            transition: border-color 0.3s ease;
+        }
+
+        .valor-custom-input:focus {
+            outline: none;
+            border-color: var(--color-button-blue);
+        }
+
+        .valor-info {
+            background-color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid var(--color-button-blue);
+        }
+
+        .valor-info-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .valor-info-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--color-button-blue);
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="consumidor-dashboard max-w-7xl mx-auto flex flex-col min-h-screen shadow-2xl bg-white">
+        
+        <header class="header-rascunho bg-white border-b border-gray-200 shadow-sm">
+            <div class="top-nav flex items-center justify-between gap-6 p-4 md:px-8 w-full">
+                <!-- Logo -->
+                <a href="/index.html" class="logo flex items-center gap-2">
+                    <img src="/assets/img/ClickFarmaLogo.jpg" alt="Logo ClickFarma" class="w-20 h-20 rounded-full" />
+                      <span class="font-bold text-2xl text-gray-700">ClickFarma</span>
+                </a>
+
+                <nav class="profile-selection flex items-center gap-2 border border-gray-200 rounded-lg p-1 bg-gray-100 text-sm font-medium">
+                    <a href="../../index.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Público</a>
+                    <a href="/paginas/dashboard/dashboard_consumidor.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Consumidor</a>
+                    <a href="/paginas/dashboard/dashboard_farmacia.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Farmácia</a>
+                    <a href="/paginas/dashboard/dashboard_profissional.html" class="profile-link text-gray-500 hover:text-gray-900 transition duration-150 rounded px-3 py-1">Profissional</a>
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="profile-link active-profile text-white bg-button-blue rounded shadow-md px-3 py-1">Entregador</a>
+                </nav>
+            </div>
+
+            <nav class="menu-principal flex items-center justify-between overflow-x-auto whitespace-nowrap bg-coolgray-10 px-4 md:px-8 border-t border-gray-200">
+                <div class="nav-links flex items-center gap-2 md:gap-4 py-2">
+                    <!-- Home Entregador -->
+                    <a href="/paginas/dashboard/dashboard_entregador.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="motorbike" class="w-4 h-4"></i>
+                        <span>Home Entregador</span>
+                    </a>
+                    <!-- Rotas Ativas -->
+                    <a href="rotas_ativas.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="map" class="w-4 h-4"></i>
+                        <span>Rotas Ativas</span>
+                    </a>
+                    <!-- Histórico -->
+                    <a href="historicos.html" class="nav-item flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded-lg text-sm font-medium">
+                        <i data-lucide="history" class="w-4 h-4"></i>
+                        <span>Histórico</span>
+                    </a>
+             
+                    <a href="ganhos.html" class="nav-item active-nav-item flex items-center gap-2 p-2 text-sm font-medium">
+                        <i data-lucide="dollar-sign" class="w-4 h-4 text-white"></i>
+                        <span class="text-white">Ganhos</span>
+                    </a>
+                </div>
+                <!-- Link de Suporte -->
+                <a href="/paginas/suporte/suporte-entregador.html" class="nav-item support-link flex items-center gap-2 p-2 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    <span class="hidden md:inline">Suporte</span>
+                </a>
+            </nav>
+        </header>
+
+        <!-- CONTEÚDO PRINCIPAL: GANHOS E CARTEIRA -->
+        <main class="main-content flex-1 p-4 md:p-8">
+            
+            <header class="mb-10">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Carteira Digital</h1>
+                <p class="text-sm text-gray-500 mt-1">Saque aqui seu dinheiro ganho.</p>
+            </header>
+            
+            <!-- CARTEIRA DIGITAL E MÉTRICAS (2 COLUNAS) -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+                
+                <!-- COLUNA 1/3: CARTEIRA DIGITAL -->
+                <div class="lg:col-span-1">
+                    <div class="wallet-card p-6 rounded-xl h-full flex flex-col justify-between">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-semibold">Saldo Disponível</h2>
+                            <i data-lucide="wallet" class="w-6 h-6"></i>
+                        </div>
+                        
+                        <div class="text-left mb-6">
+                            <p class="text-5xl font-bold">R$ 568<span class="text-3xl">.75</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MÉTODO DE SAQUE -->
+                <div class="metric-ganhos-card p-6 rounded-xl lg:col-span-2">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Escolha seu método de saque</h2>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                        <!-- PIX -->
+                        <button class="metodo-pagamento-btn active" data-metodo="pix">
+                            <i data-lucide="qr-code" class="w-5 h-5"></i> 
+                            PIX
+                        </button>
+                        <!-- Cartão -->
+                        <button class="metodo-pagamento-btn" data-metodo="cartao">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i> 
+                            Cartão de Crédito
+                        </button>
+                        <!-- Transferência Bancária -->
+                        <button class="metodo-pagamento-btn" data-metodo="banco">
+                            <i data-lucide="barcode" class="w-5 h-5"></i> 
+                            Transferência Bancária
+                        </button>
+                    </div>
+
+                    <div class="bg-coolgray-10 p-4 rounded-lg">
+                        <p class="text-sm text-gray-700"><strong>Método selecionado:</strong> <span id="metodo-selecionado">PIX</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SELEÇÃO DE VALOR PARA SAQUE -->
+            <section class="bg-white p-6 rounded-xl shadow-md mb-10">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Escolha o Valor do Saque</h2>
+                
+                <div class="valor-saque-container">
+                    <div class="valor-input-group">
+                        <!-- Botões de valores pré-definidos -->
+                        <button class="valor-preset-btn" data-valor="100">
+                            R$ 100
+                        </button>
+                        <button class="valor-preset-btn" data-valor="250">
+                            R$ 250
+                        </button>
+                        <button class="valor-preset-btn" data-valor="500">
+                            R$ 500
+                        </button>
+                        <button class="valor-preset-btn active" data-valor="568.75">
+                            Saque Total
+                        </button>
+
+                        <!-- Input customizado -->
+                        <div style="display: flex; gap: 8px; align-items: center; margin-left: auto;">
+                            <span style="font-size: 14px; color: #666; font-weight: 500;">Outro valor:</span>
+                            <input 
+                                type="number" 
+                                id="valor-customizado" 
+                                class="valor-custom-input" 
+                                placeholder="Digite o valor"
+                                step="0.01"
+                                min="10"
+                                max="568.75"
+                            />
+                        </div>
+                    </div>
+
+                    <!-- Resumo do valor selecionado -->
+                    <div class="valor-info">
+                        <div class="valor-info-label">Valor que será sacado:</div>
+                        <div class="valor-info-value" id="valor-selecionado-display">R$ 568,75</div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-white p-6 rounded-xl shadow-md mb-10">
+                <h2 class="text-xl font-bold text-gray-800 mb-6">Ganhos vs Saques</h2>
+                
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </section>
+
+            <!-- HISTÓRICO DE TRANSAÇÕES -->
+            <section class="bg-white p-6 rounded-xl shadow-md mb-10">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Histórico de Transações</h2>
+                
+                <div class="space-y-1">
+                    
+                    <!-- Cabeçalho da Tabela -->
+                    <div class="transaction-item flex justify-between items-center py-2 text-xs font-semibold text-gray-500 border-b-2">
+                        <span class="w-1/4">TIPO</span>
+                        <span class="w-1/4">DESCRIÇÃO</span>
+                        <span class="w-1/4 text-right">VALOR</span>
+                        <span class="w-1/4 text-right">DATA</span>
+                    </div>
+
+                    <!-- Transação 1: Saque (Negativo/Vermelho) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-red-500">
+                            <i data-lucide="credit-card" class="w-4 h-4"></i> Saque
+                        </div>
+                        <span class="w-1/4 text-gray-700">Transferência PIX</span>
+                        <span class="w-1/4 text-right text-red-500 font-semibold">- R$ 500,00</span>
+                        <span class="w-1/4 text-right text-gray-500">22/11/2025</span>
+                    </div>
+                    
+                    <!-- Transação 2: Pagamento (Positivo/Verde) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-green-600">
+                            <i data-lucide="package" class="w-4 h-4"></i> Pagamento
+                        </div>
+                        <span class="w-1/4 text-gray-700">Entrega #00125</span>
+                        <span class="w-1/4 text-right text-green-600 font-semibold">+ R$ 8,75</span>
+                        <span class="w-1/4 text-right text-gray-500">23/11/2025</span>
+                    </div>
+
+                    <!-- Transação 3: Pagamento (Positivo/Verde) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-green-600">
+                            <i data-lucide="package" class="w-4 h-4"></i> Pagamento
+                        </div>
+                        <span class="w-1/4 text-gray-700">Entrega #00126</span>
+                        <span class="w-1/4 text-right text-green-600 font-semibold">+ R$ 15,25</span>
+                        <span class="w-1/4 text-right text-gray-500">23/11/2025</span>
+                    </div>
+
+                    <!-- Transação 4: Ajuste (Positivo/Verde) -->
+                    <div class="transaction-item flex justify-between items-center py-3 text-sm">
+                        <div class="w-1/4 flex items-center gap-2 text-blue-500">
+                            <i data-lucide="refresh-cw" class="w-4 h-4"></i> Ajuste
+                        </div>
+                        <span class="w-1/4 text-gray-700">Reembolso Pedido #0120</span>
+                        <span class="w-1/4 text-right text-blue-500 font-semibold">+ R$ 2,50</span>
+                        <span class="w-1/4 text-right text-gray-500">21/11/2025</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BOTÕES DE AÇÃO -->
+            <section class="flex gap-4 justify-end mb-10">
+                <button class="button-action button-voltar" onclick="window.location.href='ganhos.html'">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    Voltar
+                </button>
+                <button class="button-action button-confirmar" onclick="window.location.href='confirmacao.html'">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                    Confirmar Saque
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        // Funcionalidade dos botões de método de saque
+        const metodoButtons = document.querySelectorAll('.metodo-pagamento-btn');
+        const metodoSelecionadoSpan = document.getElementById('metodo-selecionado');
+
+        metodoButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove a classe 'active' de todos os botões
+                metodoButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Adiciona a classe 'active' apenas ao botão clicado
+                this.classList.add('active');
+                
+                // Atualiza o texto do método selecionado
+                const metodo = this.dataset.metodo;
+                const metodoTextos = {
+                    'pix': 'PIX',
+                    'cartao': 'Cartão de Crédito',
+                    'banco': 'Transferência Bancária'
+                };
+                metodoSelecionadoSpan.textContent = metodoTextos[metodo];
+                
+                // Salva o método selecionado no localStorage
+                localStorage.setItem('metodoSelecionado', metodoTextos[metodo]);
+            });
+        });
+
+        // Funcionalidade de seleção de valor para saque
+        const valorPresetBtns = document.querySelectorAll('.valor-preset-btn');
+        const valorCustomInput = document.getElementById('valor-customizado');
+        const valorSelecionadoDisplay = document.getElementById('valor-selecionado-display');
+        const saldoDisponivel = 568.75;
+
+        function formatarValor(valor) {
+            return new Intl.NumberFormat('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+            }).format(valor);
+        }
+
+        function atualizarValorDisplay(valor) {
+            valorSelecionadoDisplay.textContent = formatarValor(valor);
+            localStorage.setItem('valorSaque', valor);
+        }
+
+        // Event listeners para botões de valor pré-definido
+        valorPresetBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const valor = parseFloat(this.dataset.valor);
+                
+                // Remove active de todos os botões
+                valorPresetBtns.forEach(b => b.classList.remove('active'));
+                
+                // Adiciona active ao botão clicado
+                this.classList.add('active');
+                
+                // Limpa o input customizado
+                valorCustomInput.value = '';
+                
+                // Atualiza o display
+                atualizarValorDisplay(valor);
+            });
+        });
+
+        // Event listener para input customizado
+        valorCustomInput.addEventListener('input', function() {
+            let valor = parseFloat(this.value) || 0;
+            
+            // Validar limites
+            if (valor > saldoDisponivel) {
+                valor = saldoDisponivel;
+                this.value = valor;
+            }
+            
+            if (valor < 10) {
+                valor = 0;
+            }
+
+            if (valor > 0) {
+                // Remove active de todos os botões quando digita um valor customizado
+                valorPresetBtns.forEach(b => b.classList.remove('active'));
+                
+                // Atualiza o display
+                atualizarValorDisplay(valor);
+            }
+        });
+
+        // Inicializa com valor total
+        localStorage.setItem('valorSaque', saldoDisponivel);
+
+        // Gráfico de Ganhos vs Saques
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4', 'Semana 5'],
+                datasets: [
+                    {
+                        label: 'Ganhos (R$)',
+                        data: [310, 280, 340, 290, 320],
+                        backgroundColor: '#556DBA',
+                        borderColor: '#001d6c',
+                        borderWidth: 1
+                    },
+                    {
+                        label: 'Saques (R$)',
+                        data: [200, 0, 250, 0, 150],
+                        backgroundColor: '#da1e28',
+                        borderColor: '#a31520',
+                        borderWidth: 1
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 12,
+                                weight: '600'
+                            },
+                            padding: 15
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + value;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
