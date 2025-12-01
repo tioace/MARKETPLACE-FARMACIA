@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(../menu.css);
+
+
+/*
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+}*/
+
+
+/* Container */
+.container{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 0;
+  background: #f6f7fb;
+}
+
+/* Form Box */
+.form{
+  max-width: 900px;
+  width: 100%;
+  padding: 40px 60px;
+  background: white;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+h2{
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  color: #1e2a5a;
+}
+
+h3{
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  text-align: center;
+}
+
+
+.sub{
+  text-align: center;
+  margin-top: 10px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Aba de tipos de conta */
+.account-types{
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+  list-style-type: none;
+}
+
+.account-types li a{
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: #eef1ff;
+  color: #4256d6;
+  font-weight: 700;
+  text-decoration: none;
+  transition: .2s;
+  border: 1px solid transparent;
+
+}
+
+.account-types li a:hover{
+  background: #4256d6;
+  color: white;
+}
+
+.account-types li .active{
+  background: #4256d6;
+  color: white !important;
+}
+
+/* Form Rows */
+.row-flex{
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Input */
+.field{
+  margin-top: 20px;
+  width: 100%;
+}
+
+.input{
+  height: 48px;
+  width: 100%;
+  padding: 0 15px;
+  border: 1px solid #c7c7c7;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: .2s;
+}
+
+.input:focus{
+  border-color: #4d63ff;
+  box-shadow: 0 0 0 2px rgba(77, 99, 255, 0.25);
+}
+
+/* Botão */
+.entrar-field input{
+  margin-top: 30px;
+  background: #4256d6;
+  color: white;
+  border: none;
+  font-weight: 700;
+  height: 52px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.entrar-field input:hover{
+  background: #2e3fab;
+}

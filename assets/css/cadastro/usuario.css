@@ -1,124 +1,137 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url(../menu.css);
 
-
-/*
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Nunito Sans', sans-serif;
-}*/
-
-
-.container{
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+    box-sizing: border-box;
+}
+/* Container central */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
 }
 
-.form{
-  max-width: 480px;
-  width: 100%;
-  padding: 30px;
-  border-style: outset;
-  border-color: black;
-  border-radius: 6px;
+/* Card */
+.form {
+    max-width: 600px;
+    width: 100%;
+    padding: 35px;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    background: #fff;
 }
 
-h2{
-  font-size: 28px;
-  font-weight: 600;
-  color: black;
-  text-align: center;
-
+.form-content h2 {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
 }
 
-form{
-  margin-top: 30px;
+.form-content h3 {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
 }
 
-form .field{
-  position: relative;
-  height: 45px;
-  width: 100%;
-  margin-top: 20px;
+/* Abas de tipo de conta */
+.tipo-conta {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+    padding: 0;
+    list-style: none;
 }
 
-.field input{
-  height: 100%;
-  width: 100%;
-  border: 1px solid #CACACA;
-  padding: 0 15px;
+.tipo-conta li a {
+    display: block;
+    width: 135px;
+    background: #e8e8e8;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    color: #555;
 }
 
-.eye-icon{
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #8b8b8b;
+.tipo-conta li a span {
+    display: block;
+    font-size: 11px;
+    margin-top: 2px;
+    font-weight: 400;
 }
 
-.form-link{
-  text-align: center;
-  margin-top: 10px; 
+.tipo-conta li a.ativo,
+.tipo-conta li a:hover {
+    background: #556DBA;
+    color: #fff;
 }
 
-.form-link a, .form-link span{
-  font-size: 14px;
-  font-weight: 400;
+/* Inputs */
+.input {
+    width: 100%;
+    height: 42px;
+    margin-top: 18px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    padding: 10px;
 }
 
-.form a{
-  text-decoration: none;
-  color: #556DBA;
+.linha-dupla {
+    display: flex;
+    gap: 12px;
 }
 
-.form a:hover{
-  text-decoration: underline;
+/* Checkbox */
+.aceite {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
 
-.entrar-field input:hover{
-  background: #556DBA;
-  color: #fff;
+/* Botão em <a> */
+.btn-criar {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    background: #556DBA;
+    color: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
 }
 
-.form-link .criar-conta{
-  color: #556DBA;
+.btn-criar:hover {
+    background: #4358a4;
 }
 
-.line{
-  position: relative;
-  height: 1px;
-  width: 100%;
-  margin: 36px 0;
-  background-color: #d4d4d4;
+/* Login link */
+.login-link {
+    text-align: center;
+    margin-top: 15px;
 }
 
-.line::before{
-  content: 'Ou';
-  position: absolute;
-  top: 50%;
-  right: 40%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  color: #232836;
-  padding: 0 15px;
-} 
-
-.media-option{
-  display: block;
-  align-items: center;
-  align-content: space-between;
+.login-link a {
+    color: #556DBA;
+    text-decoration: none;
 }
 
-.media-options a i{
-  border: 2px solid rgb(96 139 168);
-  border-radius: 5px;
-  padding: 1em;
+.login-link a:hover {
+    text-decoration: underline;
 }
+
+
+
 

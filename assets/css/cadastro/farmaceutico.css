@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(../menu.css);
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    background: #f6f7fb;
+}
+
+/* caixa branca */
+.form-box {
+    width: 900px;
+    background: white;
+    padding: 40px 60px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+}
+
+/* títulos */
+h2 {
+    text-align: center;
+    font-weight: 700;
+    color: #3957ff;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.subtext {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* abas */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.tabs a {
+    padding: 10px 20px;
+    background: #ececec;
+    color: #000;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.tabs .active {
+    background: #3957ff;
+    color: white !important;
+}
+
+/* seções */
+h4 {
+    margin-top: 25px;
+    font-weight: 700;
+    color: #444;
+}
+
+/* inputs */
+.field {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.field label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.input {
+    height: 46px;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
+    padding: 0 15px;
+    font-size: 15px;
+}
+
+.input:focus {
+    border-color: #3957ff;
+    box-shadow: 0 0 0 2px rgba(57, 87, 255, 0.2);
+}
+
+/* duas colunas */
+.row-flex {
+    display: flex;
+    gap: 20px;
+}
+
+.input-half {
+    width: 100%;
+}
+
+/* checkbox */
+.checkbox-field {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* botões */
+.entrar-field input {
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+    background: #3957ff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.entrar-field input:hover {
+    background: #2f49d8;
+}
+
+/* link final */
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #3957ff;
+    font-weight: 600;
+}

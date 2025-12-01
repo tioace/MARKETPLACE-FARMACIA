@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Criar conta</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../../assets/css/login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../assets/css/cadastro/farmaceutico.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
-    
-    <title>Login</title>
+
+    <title>Criar conta</title>
 </head>
 
 <body>
-    <header>
+
+     <header>
         <a href="../index.html" class="logo">
-            <img src="../AT01 - MEU SITE/assets/img/logo.png" width="120px" height="120px">  
+            <img src="../../assets/img/ClickFarmaLogo.jpg" width="120px" height="120px">  
             <span>ClickFarm</span>
         </a>
         <div class="menu">
@@ -41,10 +35,88 @@
         </nav>
     </header>
 
-    
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <div class="container">
+        <div class="form-box">
+
+            <h2>CLICKFARMA</h2>
+            <h3>Criar conta</h3>
+            <p class="subtext">Escolha seu tipo de conta:</p>
+
+            <!-- Abas -->
+            <ul class="tabs">
+                <li><a href="cad-usuario.html">Consumidor</a></li>
+                <li><a href="cad-farmacia.html">Farmácia</a></li>
+                <li><a class="active" href="cad-farmaceutico.html">Profissional</a></li>
+                <li><a href="cad-entregador.html">Entregador</a></li>
+            </ul>
+
+            <form action="#">
+                
+                <h4>Dados Pessoais</h4>
+
+                <div class="row-flex">
+                    <div class="field input-field input-half">
+                        <label>Nome Completo*</label>
+                        <input type="text" placeholder="Nome" class="input">
+                    </div>
+
+                    <div class="field input-field input-half">
+                        <label>CPF*</label>
+                        <input type="text" placeholder="000.000.000-00" class="input">
+                    </div>
+                </div>
+
+                <div class="row-flex">
+                    <div class="field input-field input-half">
+                        <label>Data de Nascimento*</label>
+                        <input type="date" class="input">
+                    </div>
+
+                    <div class="field input-field input-half">
+                        <label>Telefone*</label>
+                        <input type="tel" placeholder="(00) 00000-0000" class="input">
+                    </div>
+                </div>
+
+                <h4>Contato</h4>
+
+                <div class="field input-field">
+                    <label>Email Profissional*</label>
+                    <input type="email" placeholder="exemplo@dominio.com" class="input">
+                </div>
+
+                <div class="field input-field">
+                    <label>Senha*</label>
+                    <input type="password" placeholder="Senha" class="input">
+                </div>
+
+                <h4>Documentos</h4>
+
+                <div class="field input-field">
+                    <label>Anexar Diploma (.pdf)*</label>
+                    <input type="file" class="input">
+                </div>
+
+                <div class="field input-field">
+                    <label>Certificado de Registro Profissional (.pdf)*</label>
+                    <input type="file" class="input">
+                </div>
+
+                <div class="checkbox-field">
+                    <input type="checkbox"> <span>Li e aceito os termos</span>
+                </div>
+
+                <div class="entrar-field">
+                    <a href="../dashboard/dashboard_profissional.html"><input type="submit" value="Cadastrar Profissional"></a>
+                </div>
+
+                <p class="login-link">Possui uma conta? <a href="#">Faça login</a></p>
+
+            </form>
+
+        </div>
+    </div>
+
 </body>
 </html>
