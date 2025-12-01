@@ -4,68 +4,64 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: "Nunito Sans", sans-serif;
     box-sizing: border-box;
+    font-family: "Nunito Sans", sans-serif;
 }
-/* Container central */
+
+/* Fundo com bordas laterais claras */
+body {
+    background: #F4F5FA;
+}
+
+/* Centralização do card */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0;
+    padding: 60px 0;
 }
 
-/* Card */
+/* Card estilo da imagem */
 .form {
-    max-width: 600px;
-    width: 100%;
-    padding: 35px;
-    border: 1px solid #e3e3e3;
-    border-radius: 8px;
+    width: 65%;
     background: #fff;
+    padding: 45px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
+/* Títulos */
 .form-content h2 {
-    font-size: 28px;
     text-align: center;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 5px;
 }
 
 .form-content h3 {
-    margin-top: 5px;
     text-align: center;
-    font-size: 16px;
     font-weight: 500;
     color: #555;
+    margin-bottom: 25px;
 }
 
-/* Abas de tipo de conta */
+/* Abas */
 .tipo-conta {
     display: flex;
-    justify-content: space-between;
-    margin: 25px 0;
-    padding: 0;
+    justify-content: center;
     list-style: none;
+    gap: 10px;
+    margin-bottom: 35px;
 }
 
 .tipo-conta li a {
-    display: block;
-    width: 135px;
-    background: #e8e8e8;
-    padding: 10px;
+    padding: 10px 25px;
+    background: #E7E9F3;
     border-radius: 6px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 14px;
     text-decoration: none;
-    color: #555;
-}
-
-.tipo-conta li a span {
-    display: block;
-    font-size: 11px;
-    margin-top: 2px;
-    font-weight: 400;
+    font-weight: 600;
+    color: #444;
+    transition: .2s;
 }
 
 .tipo-conta li a.ativo,
@@ -74,64 +70,66 @@
     color: #fff;
 }
 
-/* Inputs */
+/* Inputs parecidos com o da imagem */
 .input {
     width: 100%;
-    height: 42px;
-    margin-top: 18px;
-    border: 1px solid #cfcfcf;
+    height: 46px;
     border-radius: 6px;
-    padding: 10px;
+    border: 1px solid #dfe3ee;
+    padding: 12px;
+    margin-top: 18px;
+    background: #fafafa;
+    transition: .2s;
 }
 
+.input:focus {
+    border-color: #556DBA;
+    background: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(85,109,186,.3);
+}
+
+/* Divisão dupla */
 .linha-dupla {
     display: flex;
-    gap: 12px;
+    gap: 20px;
 }
 
 /* Checkbox */
 .aceite {
-    margin-top: 12px;
+    margin-top: 20px;
     display: flex;
-    align-items: center;
-    gap: 7px;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
 }
 
-/* Botão em <a> */
+/* Botão azul abaixo igual ao da imagem */
 .btn-criar {
+    margin-top: 30px;
     display: block;
     width: 100%;
-    text-align: center;
-    margin-top: 20px;
     background: #556DBA;
+    padding: 14px;
     color: #fff;
-    padding: 12px;
+    text-align: center;
     border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 .btn-criar:hover {
-    background: #4358a4;
+    background: #0d6efd
 }
 
-/* Login link */
+/* Link de login */
 .login-link {
     text-align: center;
     margin-top: 15px;
+    font-size: 14px;
 }
 
 .login-link a {
-    color: #556DBA;
-    text-decoration: none;
+    color: #0d6efd;
 }
-
-.login-link a:hover {
-    text-decoration: underline;
-}
-
-
-
-

@@ -68,8 +68,8 @@ h3{
 .account-types li a{
   padding: 8px 20px;
   border-radius: 6px;
-  background: #eef1ff;
-  color: #4256d6;
+  background: rgba(190, 190, 190, 0.329);
+  color: #0a0a0a;
   font-weight: 700;
   text-decoration: none;
   transition: .2s;
@@ -78,12 +78,12 @@ h3{
 }
 
 .account-types li a:hover{
-  background: #4256d6;
+  background: #556DBA;
   color: white;
 }
 
 .account-types li .active{
-  background: #4256d6;
+  background: #556DBA;
   color: white !important;
 }
 
@@ -111,23 +111,24 @@ h3{
 }
 
 .input:focus{
-  border-color: #4d63ff;
+  border-color: #556DBA;
   box-shadow: 0 0 0 2px rgba(77, 99, 255, 0.25);
 }
 
 /* Botão */
-.entrar-field input{
-  margin-top: 30px;
-  background: #4256d6;
-  color: white;
-  border: none;
-  font-weight: 700;
-  height: 52px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: .2s;
+.entrar-field a {
+    display: block;
+    width: 100%;
+    background: #556DBA;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
 }
 
+
 .entrar-field input:hover{
-  background: #2e3fab;
+  background: #1b2da5;
 }
